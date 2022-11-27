@@ -2,7 +2,6 @@
 
 /*body*/
 
-
 /*nav bar*/
 .navbar {
 	border-radius: 0;
@@ -53,13 +52,10 @@
 	position: absolute;
 	z-index: 1;
 }
-.share-with-dog{
+.share-with-dog{ 
 	font-family: Omnes;
 	font-size: 50px;
 }
-
-
-
 
 
 

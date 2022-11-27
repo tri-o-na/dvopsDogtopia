@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,13 +18,13 @@
 			<a class="top_title" href="index.jsp"> HOME</a> 
 			<a class="top_title" href="about-us.jsp"> ABOUT US</a> 
 			<a class="top_title" href="care.jsp"> CARE</a> 
-			<a class="top_title_main" href="account.jsp"> ACCOUNT</a>
+			<a class="top_title_main" href="signUp.jsp"> ACCOUNT</a>
 			</div>
 
 		</div>
 	</nav>
 	<div style="margin-top:20vh; margin-left: 33%; color: #0D3B66">
-		<div class="accountTitle" style="font-size: 2.325rem; font-weight: 500; font-family: Omnes;">Your account details.</div>
+		<div class="accountTitle" style="font-size: 2.325rem; font-weight: 500; font-family: Omnes;">Please sign up.</div>
 	 	<div style="font-size: 1.65rem; font-weight: 450; font-family: Freude; margin-top: 2.5vh; margin-bottom: 2vh;">
 		 	<form>
 				<div class="nameSignUp">
@@ -41,10 +41,8 @@
 				<input type="text" style="width: 25vw; height: 5vh; border: 0.1vw solid black; border-radius: .5vw; background-color: rgba(244,211,94,0.22); padding-left: .3vw; padding-right: .3vw; font-size: 1.2rem">		 	
 		 	</form>
 		</div>
-		<div style="margin-top: 3vh;">
-			<button style="font-weight: 600; width: 12vw; height: 5vh; border: 0.1vw solid black; background-color: #0D3B66; color:#F4D35E; padding-left: .3vw; padding-right: .3vw; font-size: 1.3rem; margin-right: 1.6vw">Update</button>
-			<button style="font-weight: 600; width: 12vw; height: 5vh; border: 0.1vw solid black; background-color: #0D3B66; color:#F4D35E; padding-left: .3vw; padding-right: .3vw; font-size: 1.3rem;">Delete</button>		
-		</div>
+		<a href="login.jsp" style="color: #0D3B66; font-size: 1rem; font-weight: 300; font-family: Omnes; margin-left: 14.5vw; margin-top: 2vh; margin-right: 50%; text-decoration: none">Have An Account? Sign In Here</a>
+		<button style="font-weight: 600; width: 26vw; height: 5vh; border: 0.1vw solid black; background-color: #0D3B66; color:#F4D35E; padding-left: .3vw; padding-right: .3vw; font-size: 1.3rem; margin-top: 3vh;">Sign Up</button>
 	</div>
 </body>
 </html>
