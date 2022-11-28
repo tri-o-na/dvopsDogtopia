@@ -13,7 +13,7 @@
 <body style="background-color: #FAF0CA;">
 	<nav class="navbar navbar-expand-md">
 		<div>
-			<img class="logo" src="DVOPS-DOGTOPIA.jpg" width="18%"> 
+			<img class="logo" src="DVOPS-DOGTOPIA.jpg" width="18%">
 			<div class= "tabs">
 			<a class="top_title" href="index.jsp"> HOME</a> 
 			<a class="top_title" href="about-us.jsp"> ABOUT US</a> 

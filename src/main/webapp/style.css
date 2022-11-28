@@ -1,6 +1,9 @@
 @charset "ISO-8859-1";
 
 /*body*/
+body{
+	background-color: #FAF0CA;	
+}
 
 /*nav bar*/
 .navbar {
@@ -9,7 +12,7 @@
 	width: 179ch;
 	position: fixed;
 	top: 0;
-	left:0;
+	left: 0;
 	z-index: 2;
 }
 
@@ -41,26 +44,121 @@
 }
 
 /*images*/
-.home-page-dog-img{
-	margin-top: 1.77ch;
-	margin-left: -1ch;
+.home-page-dog-img {
+	margin-top: .77rem;
+	margin-left: -.5rem;
+	background-size: cover;
+	width: 101rem;
 }
 
-.blob{
-	top: 25ch;
-	left: 115ch;
-	position: absolute;
-	z-index: 1;
+
+/*dogs*/
+.columnDog1{
+	float: left;
+    width: 23%;
 }
-.share-with-dog{ 
+
+.dog-1{
+	width: 19rem;
+	height: 23.4rem;
+	margin-left: 6rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	background-color: #0D3B66;
+}
+.white-text{
+	color: white;
 	font-family: Omnes;
-	font-size: 50px;
+	font-weight: 10100;
+	letter-spacing: .2rem;
+	font-size: 1.1rem;
+	margin-top: -18.5rem;
+	margin-left: 0.5rem;
+	margin-bottom: 15rem;
+}
+
+.yellow-text{
+	font-family: Omnes;
+	font-size: 1rem;
+	color: #F4D35E;
+	font-weight: 170;
+	letter-spacing: .01rem;
+	margin-top: 15.5rem;
+	margin-left: 0.5rem;
+}
+.yellow-text1{
+	font-family: Omnes;
+	font-size: 1rem;
+	color: #F4D35E;
+	font-weight: 170;
+	letter-spacing: .01rem;
+	margin-top: -2.3rem;
+	margin-left: 0.5rem;
+}
+.stars{
+	margin-top: -2.1rem;
+	margin-left: 0.5rem;
+	font-size: 1rem;
 }
 
 
+.fa-star{
+	color: #EE964B;
+}
+.none{
+	color: #EE964B;
+	opacity: 59%;
+}
 
+/*dog description*/
+.desc{
+	margin-top: 6rem;
+	margin-left: 20rem;
+}
 
+.column1{
+	float: left;
+	width: 30%;
+}
 
+.descText{
+	margin-left: 25rem;
+	font-family: Omnes;
+}
+.dog-title{
+	letter-spacing: .2rem;
+	font-size: 1.7rem;
+	margin-top: 0rem;
+	margin-bottom: -.8rem;
+	color: #F95738;
+}
+.dog-text{
+	letter-spacing: .1rem;
+	font-size: 1.2rem;
+	color: #0D3B66;
+}
+
+.stars1{
+	margin-top: -2.1rem;
+	font-size: 1.3rem;
+}
+
+.have{
+	color: #F95738;
+}
+.none1{
+	color: #F95738;
+	opacity: 59%
+}
+
+/*reviews*/
+.review-title{
+	letter-spacing: .2rem;
+	font-size: 1.7rem;
+	color: #EE964B;
+	font-family: Omnes;
+	margin-left: 19.9rem;
+}
 
 
 
