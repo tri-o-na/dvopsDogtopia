@@ -53,8 +53,101 @@
 	<br><br><br><br>
 	<br><br><br>
 		<h4 class="review-title">REVIEWS</h4>
-	<div>
-		
+	<div class="columnReviews1">
+		<div class="review-1">
+			<p class="review-text">
+				Has separation anxiety,  is extremely active, very loyal, protects all, good at tricks
+			</p>
+			<h5 class="review-username">
+				Jane Tan
+			</h5>
+			<div class= "stars2">
+				<i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star none"></i>
+                <i class="fa fa-star none"></i>
+	            <i class="fa fa-pencil"></i>
+	            <i class="fa fa-trash"></i>
+			</div>
+		</div>
+	</div>
+	<div class="columnReviews1">
+		<div class="review-1">
+			<p class="review-text">
+				Leaves fur all over the house, very fun to play with
+			</p>
+			<h5 class="review-username">
+				Jane Tay Si Min
+			</h5>
+			<div class= "stars2">
+				<i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star none"></i>
+	            <i class="fa fa-pencil"></i>
+	            <i class="fa fa-trash"></i>
+			</div>
+		</div>
+	</div>
+	<div class="columnReviews1">
+		<div class="review-1">
+			<p class="review-text">
+				Very sporty and loves to go on hikes with me, learns new tricks very fast, is a great companion to have!
+			</p>
+			<h5 class="review-username">
+				John Tan
+			</h5>
+			<div class= "stars2">
+				<i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+	            <i class="fa fa-pencil"></i>
+	            <i class="fa fa-trash"></i>
+			</div>
+		</div>
+	</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<div class="columnReviews1">
+		<div class="review-1">
+			<p class="review-text">
+				acjsjvnfd jnsvlk ndnvl xvnjns djnnfjli Md;ksnvm ml lnnfvllk c mlkv 
+			</p>
+			<h5 class="review-username1">
+				Jane
+			</h5>
+			<div class= "stars-2">
+				<i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star none"></i>
+            	<i class="fa fa-pencil"></i>
+            	<i class="fa fa-trash"></i>
+			</div>
+		</div>
+	</div>
+	<div class="columnReviews1">
+		<div class="review-1">
+			<p class="review-text">
+				tello
+			</p>
+			<h5 class="review-username1">
+				Jane Tan
+			</h5>
+			<div class= "stars-2">
+				<i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star none"></i>
+            	<i class="fa fa-pencil"></i>
+            	<i class="fa fa-trash"></i>
+			</div>
+		</div>
 	</div>
 
 </body>

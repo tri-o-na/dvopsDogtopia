@@ -1,8 +1,8 @@
 @charset "ISO-8859-1";
 
 /*body*/
-body{
-	background-color: #FAF0CA;	
+body {
+	background-color: #FAF0CA;
 }
 
 /*nav bar*/
@@ -51,14 +51,13 @@ body{
 	width: 101rem;
 }
 
-
 /*dogs*/
-.columnDog1{
+.columnDog1 {
 	float: left;
-    width: 23%;
+	width: 23%;
 }
 
-.dog-1{
+.dog-1 {
 	width: 19rem;
 	height: 23.4rem;
 	margin-left: 6rem;
@@ -66,7 +65,8 @@ body{
 	margin-bottom: 1rem;
 	background-color: #0D3B66;
 }
-.white-text{
+
+.white-text {
 	color: white;
 	font-family: Omnes;
 	font-weight: 10100;
@@ -77,7 +77,7 @@ body{
 	margin-bottom: 15rem;
 }
 
-.yellow-text{
+.yellow-text {
 	font-family: Omnes;
 	font-size: 1rem;
 	color: #F4D35E;
@@ -86,7 +86,8 @@ body{
 	margin-top: 15.5rem;
 	margin-left: 0.5rem;
 }
-.yellow-text1{
+
+.yellow-text1 {
 	font-family: Omnes;
 	font-size: 1rem;
 	color: #F4D35E;
@@ -95,71 +96,136 @@ body{
 	margin-top: -2.3rem;
 	margin-left: 0.5rem;
 }
-.stars{
+
+.stars {
 	margin-top: -2.1rem;
 	margin-left: 0.5rem;
 	font-size: 1rem;
 }
 
-
-.fa-star{
+.fa-star {
 	color: #EE964B;
 }
-.none{
+
+.none {
 	color: #EE964B;
 	opacity: 59%;
 }
 
 /*dog description*/
-.desc{
+.desc {
 	margin-top: 6rem;
-	margin-left: 20rem;
+	margin-left: 15rem;
 }
 
-.column1{
+.column1 {
 	float: left;
-	width: 30%;
+	width: 29%;
 }
 
-.descText{
+.descText {
 	margin-left: 25rem;
 	font-family: Omnes;
 }
-.dog-title{
+
+.dog-title {
 	letter-spacing: .2rem;
 	font-size: 1.7rem;
 	margin-top: 0rem;
 	margin-bottom: -.8rem;
 	color: #F95738;
 }
-.dog-text{
+
+.dog-text {
 	letter-spacing: .1rem;
 	font-size: 1.2rem;
 	color: #0D3B66;
 }
 
-.stars1{
+.stars1 {
 	margin-top: -2.1rem;
 	font-size: 1.3rem;
 }
 
-.have{
+.have {
 	color: #F95738;
 }
-.none1{
+
+.none1 {
 	color: #F95738;
 	opacity: 59%
 }
 
 /*reviews*/
-.review-title{
+.review-title {
 	letter-spacing: .2rem;
 	font-size: 1.7rem;
 	color: #EE964B;
 	font-family: Omnes;
-	margin-left: 19.9rem;
+	margin-left: 15rem;
 }
 
+.columnReviews1 {
+	float: left;
+	width: 24%;
+}
 
+.review-1 {
+	width: 20rem;
+	height: 15rem;
+	margin-left: 15rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	background-color: #0D3B66;
+	border-radius: .3rem;
+}
 
+.review-text {
+	letter-spacing: .1rem;
+	font-size: 1.2rem;
+	color: #F4D35E;
+	font-family: Omnes;
+	margin-left: 0.5rem;
+	margin-top: 0.1rem;
+}
 
+.review-username {
+	font-family: Freude;
+	letter-spacing: .1rem;
+	font-size: 1rem;
+	color: #EE964B;
+	font-weight: lighter;
+	margin-left: 0.5rem;
+	position: absolute;
+	bottom: -2.5rem;
+}
+
+.review-username1 {
+	font-family: Freude;
+	letter-spacing: .1rem;
+	font-size: 1rem;
+	color: #EE964B;
+	font-weight: lighter;
+	margin-left: 0.5rem;
+	position: absolute;
+	bottom: -20.2rem;
+}
+
+.stars2 {
+	margin-left: 10.5rem;
+	position: absolute;
+	bottom: -0.8rem;
+	font-size: 1rem;
+}
+
+.stars-2 {
+	margin-left: 10.5rem;
+	position: absolute;
+	bottom: -18.6rem;
+	font-size: 1rem;
+}
+
+.fa-pencil, .fa-trash {
+	font-size: 1.05rem;
+	color: #EE964B;
+}
