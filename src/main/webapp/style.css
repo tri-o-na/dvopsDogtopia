@@ -165,6 +165,18 @@ body {
 	margin-left: 15rem;
 }
 
+button {
+	position: absolute;
+	left: 15.5rem;
+	top: 33rem;
+	font-size: 1.3rem;
+	font-family: Freude;
+	letter-spacing: 0.1rem;
+	color: #0D3B66;
+	background-color: #F4D35E;
+	border: solid #0D3B66;
+}
+
 .columnReviews1 {
 	float: left;
 	width: 24%;
