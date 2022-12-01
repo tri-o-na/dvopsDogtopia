@@ -53,7 +53,7 @@
 	<br><br><br><br>
 	<br><br><br>
 		<h4 class="review-title">REVIEWS</h4>
-		<button>ADD A REVIEW</button>
+		<a class="add-a-review-btn" onclick="window.location.href='addReview.jsp'">ADD A REVIEW</a>
 	<div class="columnReviews1">
 		<div class="review-1">
 			<p class="review-text">
@@ -68,7 +68,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star none"></i>
                 <i class="fa fa-star none"></i>
-	            <i class="fa fa-pencil"></i>
+	            <i class="fa fa-pencil" onclick="window.location.href='editReview.jsp'"></i>
 	            <i class="fa fa-trash"></i>
 			</div>
 		</div>
@@ -87,7 +87,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star none"></i>
-	            <i class="fa fa-pencil"></i>
+	            <i class="fa fa-pencil" onclick="window.location.href='editReview.jsp'"></i>
 	            <i class="fa fa-trash"></i>
 			</div>
 		</div>
@@ -106,7 +106,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
-	            <i class="fa fa-pencil"></i>
+	            <i class="fa fa-pencil" onclick="window.location.href='editReview.jsp'"></i>
 	            <i class="fa fa-trash"></i>
 			</div>
 		</div>
@@ -126,7 +126,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star none"></i>
-            	<i class="fa fa-pencil"></i>
+	            <i class="fa fa-pencil" onclick="window.location.href='editReview.jsp'"></i>
             	<i class="fa fa-trash"></i>
 			</div>
 		</div>
@@ -145,7 +145,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star none"></i>
-            	<i class="fa fa-pencil"></i>
+	            <i class="fa fa-pencil" onclick="window.location.href='editReview.jsp'"></i>
             	<i class="fa fa-trash"></i>
 			</div>
 		</div>

@@ -165,7 +165,7 @@ body {
 	margin-left: 15rem;
 }
 
-button {
+.add-a-review-btn {
 	position: absolute;
 	left: 15.5rem;
 	top: 33rem;
@@ -175,6 +175,8 @@ button {
 	color: #0D3B66;
 	background-color: #F4D35E;
 	border: solid #0D3B66;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
 }
 
 .columnReviews1 {
