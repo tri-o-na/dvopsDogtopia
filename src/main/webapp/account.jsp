@@ -23,27 +23,27 @@
 
 		</div>
 	</nav>
-	<div style="margin-top:20vh; margin-left: 33%; color: #0D3B66">
-		<div class="accountTitle" style="font-size: 2.325rem; font-weight: 500; font-family: Omnes;">Your account details.</div>
-	 	<div style="font-size: 1.65rem; font-weight: 450; font-family: Freude; margin-top: 2.5vh; margin-bottom: 2vh;">
+	<div class="accountformPositioning">
+		<div class="accountTitle">Your account details.</div>
+	 	<div class="accountForm">
 		 	<form>
-				<div class="nameSignUp">
+				<div class="inputTitle1">
 					Name
 				</div>
-				<input type="text" style="width: 25vw; height: 5vh; border: 0.1vw solid black; border-radius: .5vw; background-color: rgba(244,211,94,0.22); padding-left: .3vw; padding-right: .3vw; font-size: 1.2rem">	
-				<div style="margin-top:1vh">
+				<input type="text" class="inputBox">	
+				<div class="inputTitle">
 					Email
 				</div>
-				<input type="text" style="width: 25vw; height: 5vh; border: 0.1vw solid black; border-radius: .5vw; background-color: rgba(244,211,94,0.22); padding-left: .3vw; padding-right: .3vw; font-size: 1.2rem">	
-				<div style="margin-top:1vh">
+				<input type="text" class="inputBox">
+				<div class="inputTitle">
 					Password 
 				</div>
-				<input type="text" style="width: 25vw; height: 5vh; border: 0.1vw solid black; border-radius: .5vw; background-color: rgba(244,211,94,0.22); padding-left: .3vw; padding-right: .3vw; font-size: 1.2rem">		 	
+				<input type="text" class="inputBox">	 	
 		 	</form>
 		</div>
 		<div style="margin-top: 3vh;">
-			<button style="font-weight: 600; width: 12vw; height: 5vh; border: 0.1vw solid black; background-color: #0D3B66; color:#F4D35E; padding-left: .3vw; padding-right: .3vw; font-size: 1.3rem; margin-right: 1.6vw">Update</button>
-			<button style="font-weight: 600; width: 12vw; height: 5vh; border: 0.1vw solid black; background-color: #0D3B66; color:#F4D35E; padding-left: .3vw; padding-right: .3vw; font-size: 1.3rem;">Delete</button>		
+			<button class="updateButton"">Update</button>
+			<button class="deleteButton"">Delete</button>		
 		</div>
 	</div>
 </body>

@@ -27,6 +27,25 @@
 			</div>
 		</div>
 	</nav>
-
+	<div class="reviewformPositioning">
+		<div class="addReviewTitle">Add your review here.</div>
+	 	<div class="addReviewForm">
+		 	<form>
+				<div class="inputTitle1">
+					Review
+				</div>
+				<input type="text" class="inputBox">	
+				<div class="inputTitle">
+					Rating 
+				</div>
+				<input type="number" class="inputBox">		 	
+		 	</form>
+		</div>
+		<button class="formButton">Add review</button>
+	</div>
 </body>
 </html>
+
+
+
+

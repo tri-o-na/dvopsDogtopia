@@ -243,3 +243,134 @@ body {
 	font-size: 1.05rem;
 	color: #EE964B;
 }
+
+/*sign up, sign in, account page*/
+.accountformPositioning {
+	margin-top: 25vh;
+	margin-left: 37%;
+	color: #0D3B66;
+}
+
+.accountTitle {
+	font-size: 2rem;
+	font-weight: 500;
+	font-family: Omnes;
+}
+
+.accountForm {
+	font-size: 1.4rem;
+	font-weight: 450;
+	font-family: Freude;
+	margin-top: 2.5vh;
+	margin-bottom: 2vh;
+}
+/*links*/
+.linkToSignIn {
+	color: #0D3B66;
+	font-size: 1rem;
+	font-weight: 300;
+	font-family: Omnes;
+	margin-left: 14.5vw;
+	margin-top: 2vh;
+	margin-right: 50%;
+	text-decoration: none;
+}
+
+.linkToSignUp {
+	color: #0D3B66;
+	font-size: 1rem;
+	font-weight: 300;
+	font-family: Omnes;
+	margin-left: 16.2vw;
+	margin-top: 2vh;
+	margin-right: 50%;
+	text-decoration: none;
+}
+/*account page*/
+.updateButton {
+	font-family: Omnes;
+	font-weight: 600;
+	width: 11.9vw;
+	height: 5vh;
+	border: none;
+	background-color: #0D3B66;
+	color: #F4D35E;
+	letter-spacing: 0.05rem;
+	text-align: center;
+	font-size: 1.3rem;
+	margin-right: 1.67vw;
+}
+
+.deleteButton {
+	font-family: Omnes;
+	font-weight: 600;
+	width: 11.9vw;
+	height: 5vh;
+	border: none;
+	background-color: #0D3B66;
+	color: #F4D35E;
+	letter-spacing: 0.05rem;
+	text-align: center;
+	font-size: 1.3rem;
+}
+
+/*add/edit review page*/
+.reviewformPositioning {
+	margin-top: 30vh;
+	margin-left: 37%;
+	color: #0D3B66;
+}
+
+.addReviewTitle {
+	font-size: 2rem;
+	font-weight: 500;
+	font-family: Omnes;
+}
+
+.addReviewForm {
+	font-size: 1.4rem;
+	font-weight: 450;
+	font-family: Freude;
+	margin-top: 2.5vh;
+	margin-bottom: 2vh;
+}
+
+/*forms*/
+.formButton {
+	font-family: Omnes;
+	font-weight: 600;
+	width: 25.8vw;
+	height: 5vh;
+	border: none;
+	background-color: #0D3B66;
+	color: #F4D35E;
+	font-size: 1.3rem;
+	margin-top: 2vh;
+	background-color: #0D3B66;
+	letter-spacing: 0.05rem;
+	text-align: center;
+}
+
+.inputTitle1 {
+	font-family: freude;
+	text-transform: uppercase;
+	margin-bottom: 0.5vh;
+}
+
+.inputTitle {
+	margin-top: 1.2vh;
+	font-family: freude;
+	text-transform: uppercase;
+	margin-bottom: 0.5vh;
+}
+
+.inputBox {
+	width: 25vw;
+	height: 5vh;
+	border: 0.1vw solid #0D3B66;
+	border-radius: .5vw;
+	background-color: rgba(244, 211, 94, 0.22);
+	padding-left: .3vw;
+	padding-right: .3vw;
+	font-size: 1.2rem
+}

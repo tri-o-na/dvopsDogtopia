@@ -23,22 +23,22 @@
 
 		</div>
 	</nav>
-	<div style="margin-top:25vh; margin-left: 33%; color: #0D3B66">
-		<div class="accountTitle" style="font-size: 2.325rem; font-weight: 500; font-family: Omnes;">Please sign in.</div>
-	 	<div style="font-size: 1.65rem; font-weight: 450; font-family: Freude; margin-top: 2.5vh; margin-bottom: 2vh;">
+	<div class="accountformPositioning">
+		<div class="accountTitle">Please sign in.</div>
+	 	<div class="accountForm">
 		 	<form>
-				<div class="nameSignUp">
+				<div class="inputTitle1">
 					Email
 				</div>
-				<input type="text" style="width: 25vw; height: 5vh; border: 0.1vw solid black; border-radius: .5vw; background-color: rgba(244,211,94,0.22); padding-left: .3vw; padding-right: .3vw; font-size: 1.2rem">	
-				<div style="margin-top:1vh">
+				<input type="text" class="inputBox">
+				<div class="inputTitle">
 					Password 
 				</div>
-				<input type="text" style="width: 25vw; height: 5vh; border: 0.1vw solid black; border-radius: .5vw; background-color: rgba(244,211,94,0.22); padding-left: .3vw; padding-right: .3vw; font-size: 1.2rem">	
+				<input type="text" class="inputBox">	 	
 		 	</form>
 		</div>
-		<a href="signUp.jsp" style="color: #0D3B66; font-size: 1rem; font-weight: 300; font-family: Omnes; margin-left: 15.5vw; margin-top: 2vh; margin-right: 50%; text-decoration: none">No Account? Sign Up Here</a>
-		<button type="button" onclick="window.location.href='account.jsp'" style="font-weight: 600; width: 26vw; height: 5vh; border: 0.1vw solid black; background-color: #0D3B66; color:#F4D35E; padding-left: .3vw; padding-right: .3vw; font-size: 1.3rem; margin-top: 3vh;">Sign In</button>
+		<a href="signUp.jsp" class="linkToSignUp">No Account? Sign Up Here</a>
+		<button type="button" onclick="window.location.href='account.jsp'" class="formButton">Sign In</button>
 	</div>
 </body>
 </html>
