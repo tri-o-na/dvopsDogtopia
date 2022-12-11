@@ -374,3 +374,16 @@ body {
 	padding-right: .3vw;
 	font-size: 1.2rem
 }
+
+/*about us*/
+.about-us-title{
+ color: #F95738;;
+ font-family: Omnes; 
+ letter-spacing: .12rem;
+ font-size: 1.7rem;
+}
+.about-us-dog1{
+ margin-top: 5.2rem;
+ margin-left: 10rem;
+ margin-right: 3rem;
+}
