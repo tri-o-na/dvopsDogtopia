@@ -1,0 +1,71 @@
+@charset "ISO-8859-1";
+
+/*body*/
+
+
+/*nav bar*/
+.navbar {
+	border-radius: 0;
+	background: #0D3B66;
+	width: 179ch;
+	position: fixed;
+	top: 0;
+	left:0;
+	z-index: 2;
+}
+
+.logo {
+	margin-left: 5ch;
+}
+
+.top_title {
+	color: #EE964B;
+	padding-right: 20px;
+	font-size: 18px;
+	font-family: Freude;
+	text-decoration: none;
+	margin-bottom: -10ch;
+}
+
+.top_title_main {
+	color: #F95738;
+	padding-right: 20px;
+	font-size: 18px;
+	font-family: Freude;
+	text-decoration: none;
+}
+
+.tabs {
+	margin-left: 1235px;
+	margin-top: -4.5ch;
+	position: absolute;
+}
+
+/*images*/
+.home-page-dog-img{
+	margin-top: 1.77ch;
+	margin-left: -1ch;
+}
+
+.blob{
+	top: 25ch;
+	left: 115ch;
+	position: absolute;
+	z-index: 1;
+}
+.share-with-dog{
+	font-family: Omnes;
+	font-size: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
