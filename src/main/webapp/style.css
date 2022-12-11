@@ -1,6 +1,9 @@
 @charset "ISO-8859-1";
 
 /*body*/
+body {
+	background-color: #FAF0CA;
+}
 
 /*nav bar*/
 .navbar {
@@ -9,7 +12,7 @@
 	width: 179ch;
 	position: fixed;
 	top: 0;
-	left:0;
+	left: 0;
 	z-index: 2;
 }
 
@@ -41,27 +44,346 @@
 }
 
 /*images*/
-.home-page-dog-img{
-	margin-top: 1.77ch;
-	margin-left: -1ch;
+.home-page-dog-img {
+	margin-top: .77rem;
+	margin-left: -.5rem;
+	background-size: cover;
+	width: 101rem;
 }
 
-.blob{
-	top: 25ch;
-	left: 115ch;
-	position: absolute;
-	z-index: 1;
+/*dogs*/
+.columnDog1 {
+	float: left;
+	width: 23%;
 }
-.share-with-dog{ 
+
+.dog-1 {
+	width: 19rem;
+	height: 23.4rem;
+	margin-left: 6rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	background-color: #0D3B66;
+}
+
+.white-text {
+	color: white;
 	font-family: Omnes;
-	font-size: 50px;
+	font-weight: 10100;
+	letter-spacing: .2rem;
+	font-size: 1.1rem;
+	margin-top: -18.5rem;
+	margin-left: 0.5rem;
+	margin-bottom: 15rem;
 }
 
+.yellow-text {
+	font-family: Omnes;
+	font-size: 1rem;
+	color: #F4D35E;
+	font-weight: 170;
+	letter-spacing: .01rem;
+	margin-top: 15.5rem;
+	margin-left: 0.5rem;
+}
 
+.yellow-text1 {
+	font-family: Omnes;
+	font-size: 1rem;
+	color: #F4D35E;
+	font-weight: 170;
+	letter-spacing: .01rem;
+	margin-top: -2.3rem;
+	margin-left: 0.5rem;
+}
 
+.stars {
+	margin-top: -2.1rem;
+	margin-left: 0.5rem;
+	font-size: 1rem;
+}
 
+.fa-star {
+	color: #EE964B;
+}
 
+.none {
+	color: #EE964B;
+	opacity: 59%;
+}
 
+/*dog description*/
+.desc {
+	margin-top: 6rem;
+	margin-left: 15rem;
+}
 
+.column1 {
+	float: left;
+	width: 29%;
+}
 
+.descText {
+	margin-left: 25rem;
+	font-family: Omnes;
+}
 
+.dog-title {
+	letter-spacing: .2rem;
+	font-size: 1.7rem;
+	margin-top: 0rem;
+	margin-bottom: -.8rem;
+	color: #F95738;
+}
+
+.dog-text {
+	letter-spacing: .1rem;
+	font-size: 1.2rem;
+	color: #0D3B66;
+}
+
+.stars1 {
+	margin-top: -2.1rem;
+	font-size: 1.3rem;
+}
+
+.have {
+	color: #F95738;
+}
+
+.none1 {
+	color: #F95738;
+	opacity: 59%
+}
+
+/*reviews*/
+.review-title {
+	letter-spacing: .2rem;
+	font-size: 1.7rem;
+	color: #EE964B;
+	font-family: Omnes;
+	margin-left: 15rem;
+}
+
+.add-a-review-btn {
+	position: absolute;
+	left: 15.5rem;
+	top: 33rem;
+	font-size: 1.3rem;
+	font-family: Freude;
+	letter-spacing: 0.1rem;
+	color: #0D3B66;
+	background-color: #F4D35E;
+	border: solid #0D3B66;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+.columnReviews1 {
+	float: left;
+	width: 24%;
+}
+
+.review-1 {
+	width: 20rem;
+	height: 15rem;
+	margin-left: 15rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	background-color: #0D3B66;
+	border-radius: .3rem;
+}
+
+.review-text {
+	letter-spacing: .1rem;
+	font-size: 1.2rem;
+	color: #F4D35E;
+	font-family: Omnes;
+	margin-left: 0.5rem;
+	margin-top: 0.1rem;
+}
+
+.review-username {
+	font-family: Freude;
+	letter-spacing: .1rem;
+	font-size: 1rem;
+	color: #EE964B;
+	font-weight: lighter;
+	margin-left: 0.5rem;
+	position: absolute;
+	bottom: -2.5rem;
+}
+
+.review-username1 {
+	font-family: Freude;
+	letter-spacing: .1rem;
+	font-size: 1rem;
+	color: #EE964B;
+	font-weight: lighter;
+	margin-left: 0.5rem;
+	position: absolute;
+	bottom: -20.2rem;
+}
+
+.stars2 {
+	margin-left: 10.5rem;
+	position: absolute;
+	bottom: -0.8rem;
+	font-size: 1rem;
+}
+
+.stars-2 {
+	margin-left: 10.5rem;
+	position: absolute;
+	bottom: -18.6rem;
+	font-size: 1rem;
+}
+
+.fa-pencil, .fa-trash {
+	font-size: 1.05rem;
+	color: #EE964B;
+}
+
+/*sign up, sign in, account page*/
+.accountformPositioning {
+	margin-top: 25vh;
+	margin-left: 37%;
+	color: #0D3B66;
+}
+
+.accountTitle {
+	font-size: 2rem;
+	font-weight: 500;
+	font-family: Omnes;
+}
+
+.accountForm {
+	font-size: 1.4rem;
+	font-weight: 450;
+	font-family: Freude;
+	margin-top: 2.5vh;
+	margin-bottom: 2vh;
+}
+/*links*/
+.linkToSignIn {
+	color: #0D3B66;
+	font-size: 1rem;
+	font-weight: 300;
+	font-family: Omnes;
+	margin-left: 14.5vw;
+	margin-top: 2vh;
+	margin-right: 50%;
+	text-decoration: none;
+}
+
+.linkToSignUp {
+	color: #0D3B66;
+	font-size: 1rem;
+	font-weight: 300;
+	font-family: Omnes;
+	margin-left: 16.2vw;
+	margin-top: 2vh;
+	margin-right: 50%;
+	text-decoration: none;
+}
+/*account page*/
+.updateButton {
+	font-family: Omnes;
+	font-weight: 600;
+	width: 11.9vw;
+	height: 5vh;
+	border: none;
+	background-color: #0D3B66;
+	color: #F4D35E;
+	letter-spacing: 0.05rem;
+	text-align: center;
+	font-size: 1.3rem;
+	margin-right: 1.67vw;
+}
+
+.deleteButton {
+	font-family: Omnes;
+	font-weight: 600;
+	width: 11.9vw;
+	height: 5vh;
+	border: none;
+	background-color: #0D3B66;
+	color: #F4D35E;
+	letter-spacing: 0.05rem;
+	text-align: center;
+	font-size: 1.3rem;
+}
+
+/*add/edit review page*/
+.reviewformPositioning {
+	margin-top: 30vh;
+	margin-left: 37%;
+	color: #0D3B66;
+}
+
+.addReviewTitle {
+	font-size: 2rem;
+	font-weight: 500;
+	font-family: Omnes;
+}
+
+.addReviewForm {
+	font-size: 1.4rem;
+	font-weight: 450;
+	font-family: Freude;
+	margin-top: 2.5vh;
+	margin-bottom: 2vh;
+}
+
+/*forms*/
+.formButton {
+	font-family: Omnes;
+	font-weight: 600;
+	width: 25.8vw;
+	height: 5vh;
+	border: none;
+	background-color: #0D3B66;
+	color: #F4D35E;
+	font-size: 1.3rem;
+	margin-top: 2vh;
+	background-color: #0D3B66;
+	letter-spacing: 0.05rem;
+	text-align: center;
+}
+
+.inputTitle1 {
+	font-family: freude;
+	text-transform: uppercase;
+	margin-bottom: 0.5vh;
+}
+
+.inputTitle {
+	margin-top: 1.2vh;
+	font-family: freude;
+	text-transform: uppercase;
+	margin-bottom: 0.5vh;
+}
+
+.inputBox {
+	width: 25vw;
+	height: 5vh;
+	border: 0.1vw solid #0D3B66;
+	border-radius: .5vw;
+	background-color: rgba(244, 211, 94, 0.22);
+	padding-left: .3vw;
+	padding-right: .3vw;
+	font-size: 1.2rem
+}
+
+/*about us*/
+.about-us-title{
+ color: #F95738;;
+ font-family: Omnes; 
+ letter-spacing: .12rem;
+ font-size: 1.7rem;
+}
+.about-us-dog1{
+ margin-top: 5.2rem;
+ margin-left: 10rem;
+ margin-right: 3rem;
+}
