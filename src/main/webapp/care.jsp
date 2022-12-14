@@ -18,7 +18,7 @@
 			<a class="top_title" href="index.jsp"> HOME</a> 
 			<a class="top_title" href="about-us.jsp"> ABOUT US</a> 
 			<a class="top_title_main" href="care.jsp"> CARE</a> 
-			<a class="top_title" href="account.jsp"> ACCOUNT</a>
+			<a class="top_title" href="signUp.jsp"> ACCOUNT</a>
 			</div>
 
 		</div>

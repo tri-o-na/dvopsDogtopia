@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,20 +18,16 @@
 			<a class="top_title" href="index.jsp"> HOME</a> 
 			<a class="top_title" href="about-us.jsp"> ABOUT US</a> 
 			<a class="top_title" href="care.jsp"> CARE</a> 
-			<a class="top_title_main" href="account.jsp"> ACCOUNT</a>
+			<a class="top_title_main" href="signUp.jsp"> ACCOUNT</a>
 			</div>
 
 		</div>
 	</nav>
 	<div class="accountformPositioning">
-		<div class="accountTitle">Your account details.</div>
+		<div class="accountTitle">Please sign in.</div>
 	 	<div class="accountForm">
 		 	<form>
 				<div class="inputTitle1">
-					Name
-				</div>
-				<input type="text" class="inputBox">	
-				<div class="inputTitle">
 					Email
 				</div>
 				<input type="text" class="inputBox">
@@ -41,10 +37,8 @@
 				<input type="text" class="inputBox">	 	
 		 	</form>
 		</div>
-		<div style="margin-top: 3vh;">
-			<button class="updateButton"">Update</button>
-			<button class="deleteButton"">Delete</button>		
-		</div>
+		<a href="signUp.jsp" class="linkToSignUp">No Account? Sign Up Here</a>
+		<button type="button" onclick="window.location.href='account.jsp'" class="formButton">Sign In</button>
 	</div>
 </body>
 </html>
