@@ -9,7 +9,7 @@ body {
 .navbar {
 	border-radius: 0;
 	background: #0D3B66;
-	width: 179ch;
+	width: 100%;
 	position: fixed;
 	top: 0;
 	left: 0;
