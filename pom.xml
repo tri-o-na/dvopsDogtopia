@@ -8,6 +8,12 @@
 	<description>DVOPS_Project</description>
 	<dependencies>
 		<dependency>
+		    <groupId>org.junit.jupiter</groupId>
+		    <artifactId>junit-jupiter</artifactId>
+		    <version>5.7.0</version>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
 		    <groupId>org.testng</groupId>
 		    <artifactId>testng</artifactId>
 		    <version>7.0.0</version>
