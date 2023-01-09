@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,32 +13,33 @@
 <body style="background-color: #FAF0CA;">
 	<nav class="navbar navbar-expand-md">
 		<div>
-			<img class="logo" src="DVOPS-DOGTOPIA.jpg" width="18%"> 
-			<div class= "tabs">
-			<a class="top_title" href="index.jsp"> HOME</a> 
-			<a class="top_title" href="about-us.jsp"> ABOUT US</a> 
-			<a class="top_title" href="care.jsp"> CARE</a> 
-			<a class="top_title_main" href="signUp.jsp"> ACCOUNT</a>
+			<img class="logo" src="DVOPS-DOGTOPIA.jpg" width="18%">
+			<div class="tabs">
+				<a class="top_title" href="index.jsp"> HOME</a> <a class="top_title"
+					href="about-us.jsp"> ABOUT US</a> <a class="top_title"
+					href="care.jsp"> CARE</a> <a class="top_title_main"
+					href="signUp.jsp"> ACCOUNT</a>
 			</div>
 
 		</div>
 	</nav>
 	<div class="accountformPositioning">
 		<div class="accountTitle">Please sign in.</div>
-	 	<div class="accountForm">
-		 	<form>
-				<div class="inputTitle1">
-					Email
-				</div>
-				<input type="text" class="inputBox">
-				<div class="inputTitle">
-					Password 
-				</div>
-				<input type="text" class="inputBox">	 	
-		 	</form>
-		</div>
-		<a href="signUp.jsp" class="linkToSignUp">No Account? Sign Up Here</a>
-		<button type="button" onclick="window.location.href='account.jsp'" class="formButton">Sign In</button>
+		<form>
+			<div class="accountForm">
+
+				<div class="inputTitle1">Username</div>
+				<input type="text" class="inputBox" name="nusername">
+				<div class="inputTitle">Password</div>
+				<input type="text" class="inputBox" name="npassword">
+
+			</div>
+			<a href="signUp.jsp" class="linkToSignUp">No Account? Sign Up
+				Here</a>
+			<button type="button" onclick="window.location.href='account.jsp'"
+				class="formButton">Sign In</button>
+		</form>
+
 	</div>
 </body>
 </html>
