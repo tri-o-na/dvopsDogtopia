@@ -47,19 +47,19 @@ public class User {
 		this.password = password;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(username, email, password);
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!(obj instanceof User))
-			return false;
-		User other = (User) obj;
-		return Objects.equals(username, other.username) && Objects.equals(email, other.email) && Objects.equals(password, other.password);
-	}
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash(username, email, password);
+//	}
+//	
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (!(obj instanceof User))
+//			return false;
+//		User other = (User) obj;
+//		return Objects.equals(username, other.username) && Objects.equals(email, other.email) && Objects.equals(password, other.password);
+//	}
 
 }

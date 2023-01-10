@@ -5,7 +5,7 @@ import java.util.*;
 public class UserCollection {
 	public ArrayList<User> users = new ArrayList<>();
 	public UserCollection() {
-		users.add(new User("user 1", "user1@email.com", "password1"));
+		users.add(new User("user1", "user1@email.com", "password1"));
 	}
 	
 	public List<User> getAllUser(){

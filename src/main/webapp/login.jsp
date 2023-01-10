@@ -25,19 +25,18 @@
 	</nav>
 	<div class="accountformPositioning">
 		<div class="accountTitle">Please sign in.</div>
-		<form>
+		<form action="UserServlet" method="post">
 			<div class="accountForm">
 
 				<div class="inputTitle1">Username</div>
-				<input type="text" class="inputBox" name="nusername">
+				<input type="text" class="inputBox" name="lusername">
 				<div class="inputTitle">Password</div>
-				<input type="text" class="inputBox" name="npassword">
+				<input type="text" class="inputBox" name="lpassword">
 
 			</div>
 			<a href="signUp.jsp" class="linkToSignUp">No Account? Sign Up
 				Here</a>
-			<button type="button" onclick="window.location.href='account.jsp'"
-				class="formButton">Sign In</button>
+			<input class="formButton" type="submit" value="Sign In" />
 		</form>
 
 	</div>
