@@ -23,7 +23,10 @@
 				<a class="top_title" href="index.jsp"> HOME</a> 
 				<a class="top_title" href="about-us.jsp"> ABOUT US</a> 
 				<a class="top_title" href="care.jsp"> CARE</a> 
-				<a class="top_title" href="signUp.jsp"> ACCOUNT</a>
+				<a class="top_title" href="account.jsp"> ACCOUNT</a>
+				<form action="<%=request.getContextPath()%>/UserServlet/logout" method="post">
+					<input class="top_title_logout" type="submit" value="LOG OUT"/>
+				</form>
 			</div>
 		</div>
 	</nav>

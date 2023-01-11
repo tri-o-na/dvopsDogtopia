@@ -27,4 +27,33 @@ public class UserCollection {
         users.add(user);
         return true; 
 	}
+	
+	public void editUser (String username, String email, String password, String oldpass) {
+    	users.add(new User(username, email, password)); 
+    	if (oldpass == password) {
+        	for (User u : users) { 		      
+                if(u.getUsername().equals(username) && u.getPassword().equals(password)) {
+                	users.remove(u);
+                };
+           }
+    	}
+    	else {
+        	for (User u : users) { 		      
+                if(u.getUsername().equals(username) && u.getPassword().equals(oldpass)) {
+                	users.remove(u);
+                };
+           }
+    	}
+
+	}
+	
+	public boolean deleteUser (String username, String password) {
+    	for (User u : users) { 		      
+            if(u.getUsername().equals(username) && u.getPassword().equals(password)) {
+            	users.remove(u);
+            	return true;
+            };
+       }
+    	return false;
+	}
 }

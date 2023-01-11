@@ -29,6 +29,18 @@ body {
 	margin-bottom: -10ch;
 }
 
+.top_title_logout {
+	color: #EE964B;
+	padding-right: 20px;
+	font-size: 18px;
+	font-family: Freude;
+	text-decoration: none;
+	margin-bottom: -10ch;
+	border: none;
+	background: transparent;
+	
+}
+
 .top_title_main {
 	color: #F95738;
 	padding-right: 20px;

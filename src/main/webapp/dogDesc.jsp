@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +25,15 @@
 				<a class="top_title" href="index.jsp"> HOME</a> 
 				<a class="top_title" href="about-us.jsp"> ABOUT US</a> 
 				<a class="top_title" href="care.jsp"> CARE</a> 
-				<a class="top_title" href="signUp.jsp"> ACCOUNT</a>
+				<c:if test='${sessionScope.username == null}'>
+					<a class="top_title" href="signUp.jsp"> Sign Up</a>
+				</c:if>
+				<c:if test='${sessionScope.username != null}'>
+					<a class="top_title" href="account.jsp"> ACCOUNT</a>
+					<form action="<%=request.getContextPath()%>/UserServlet/logout" method="post">
+						<input class="top_title_logout" type="submit" value="LOG OUT"/>
+					</form>
+				</c:if>
 			</div>
 		</div>
 	</nav>

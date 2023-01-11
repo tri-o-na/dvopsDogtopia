@@ -15,10 +15,10 @@
 		<div>
 			<img class="logo" src="DVOPS-DOGTOPIA.jpg" width="18%">
 			<div class="tabs">
-				<a class="top_title" href="index.jsp"> HOME</a> <a class="top_title"
-					href="about-us.jsp"> ABOUT US</a> <a class="top_title"
-					href="care.jsp"> CARE</a> <a class="top_title_main"
-					href="signUp.jsp"> ACCOUNT</a>
+				<a class="top_title" href="index.jsp"> HOME</a> 
+				<a class="top_title" href="about-us.jsp"> ABOUT US</a> 
+				<a class="top_title"href="care.jsp"> CARE</a> 
+				<a class="top_title_main" href="signUp.jsp"> ACCOUNT</a>
 			</div>
 
 		</div>
@@ -36,8 +36,8 @@
 				<input type="text" class="inputBox" name="rpassword">
 
 			</div>
-			<a href="login.jsp" class="linkToSignIn">Have An Account? Sign In
-				Here</a> <input class="formButton" type="submit" value="Sign Up" />
+			<a href="login.jsp" class="linkToSignIn">Have An Account? Sign InHere</a> 
+			<input class="formButton" type="submit" value="Sign Up" />
 		</form>
 	</div>
 </body>

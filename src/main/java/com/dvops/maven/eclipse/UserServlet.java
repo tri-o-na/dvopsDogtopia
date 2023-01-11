@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -59,6 +60,12 @@ public class UserServlet extends HttpServlet {
 			case "/UserServlet/register":
 				register(request, response);
 				break;
+			case "/UserServlet/edit":
+				edit(request, response);
+				break;
+			case "/UserServlet/logout":
+				logout(request, response);
+				break;
 			}
 		} catch (ServletException ex) {
 			throw new ServletException(ex);
@@ -66,18 +73,80 @@ public class UserServlet extends HttpServlet {
 		
 	}
 
+	private void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getSession().removeAttribute("username");
+		request.getSession().removeAttribute("password");
+		request.getSession().removeAttribute("email");
+		response.sendRedirect("http://localhost:8080/dvopsDogtopia/index.jsp");
+		
+		PrintWriter out = response.getWriter();
+		out.println("<script type=\"text/javascript\">");
+		out.println("alert('You have been logged out, see you again!');");
+		out.println("location='http://localhost:8080/dvopsDogtopia/index.jsp';");
+		out.println("</script>");
+	}
+
+	private void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		String username = (String) request.getSession().getAttribute("username");
+		System.out.println(request.getSession().getAttribute("username"));
+		System.out.println("Start of if");
+		if (request.getParameter("updateUser") != null) {
+			String email = request.getParameter("eemail");
+			String password = request.getParameter("epassword");
+			String oldpass = (String) request.getSession().getAttribute(password);
+			System.out.println("Edit HERE!!!!");
+			
+			userCollection.deleteUser(username, oldpass);
+			userCollection.signUp(new User(username, email, password));
+			
+			//userCollection.editUser(username, email, password, oldpass);
+			System.out.println("Edited");
+			response.sendRedirect("http://localhost:8080/dvopsDogtopia/index.jsp");
+			
+			System.out.println(userCollection.login(username, password));
+			System.out.println(userCollection.users.size());
+			
+			request.getSession().setAttribute("email", email);
+			request.getSession().setAttribute("password", password);
+
+		};
+		
+		if(request.getParameter("deleteUser") != null){
+			String password = (String) request.getSession().getAttribute("password");
+			System.out.print("Delete HERE!!!!");
+
+			userCollection.deleteUser(username, password);
+			System.out.println("Deleted");
+			request.getSession().removeAttribute("username");
+			request.getSession().removeAttribute("password");
+			request.getSession().removeAttribute("email");
+			response.sendRedirect("http://localhost:8080/dvopsDogtopia/index.jsp");
+			System.out.println(userCollection.users.size());
+		};
+
+	}
+
 	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { //Login user function
 		System.out.print("LOGIN HERE!!!!");
 		//Getting the login form info from login.jsp
-		String username = request.getParameter("lusername");
+		String username = (String)request.getParameter("lusername");
 		String password = request.getParameter("lpassword");
+		System.out.println(username);
+		System.out.println(request.getSession().getAttribute("username"));
+		request.getSession().removeAttribute(username);
+		
 		
 		//If userCollection cant find user, it will retuurn a null
 		if (userCollection.login(username, password) != null) {
-			request.setAttribute("username", username);
-			request.setAttribute("password", password);
+			request.getSession().setAttribute("username", username);
+			request.getSession().setAttribute("email", userCollection.login(username, password).getEmail());
+			request.getSession().setAttribute("password", password);
+			
 			response.sendRedirect("http://localhost:8080/dvopsDogtopia/index.jsp");
 			System.out.println(userCollection.login(username, password).getEmail());
+			System.out.println(request.getSession().getAttribute("username"));
+			
 		}
 		else {
 			//Just adding a alert whenever the user fails the form 

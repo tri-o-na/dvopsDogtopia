@@ -22,5 +22,7 @@
 		<servlet-name>UserServlet</servlet-name>
 		<url-pattern>/UserServlet/login</url-pattern>
 		<url-pattern>/UserServlet/register</url-pattern>
+		<url-pattern>/UserServlet/edit</url-pattern>
+		<url-pattern>/UserServlet/logout</url-pattern>		
 	</servlet-mapping>
 </web-app>
