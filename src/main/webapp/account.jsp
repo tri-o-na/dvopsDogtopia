@@ -35,7 +35,7 @@
 			<div class="accountForm">
 				<c:out value="${sessionScope.username}"></c:out>
 				<div class="inputTitle">Email</div>
-				<input type="text" class="inputBox" name="eemail" value = "${sessionScope.email}">
+				<input type="email" class="inputBox" name="eemail" value = "${sessionScope.email}">
 				<div class="inputTitle">Password</div>
 				<input type="text" class="inputBox" name="epassword" value = "${sessionScope.password}">
 
