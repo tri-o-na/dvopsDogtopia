@@ -1,6 +1,7 @@
 package com.dvops.maven.eclipse;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,65 +32,89 @@ public class UserServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//I dont know how to make it so that the user wont be able to see the servlet name in the url, 
-		//this is a very bad idea as possible other pages which need the same action will have a conflict
+		//Web.xml file is finally working, but for the form action u MUST use this format: 
+		// <%=request.getContextPath()%>/{ServletCase}
+		//All the servlet cases are listed at the Servlet itself
+		//Must change web.xml file every time u add a new servlet or a new servlet function/case
+		//No longer need the horrible fix which was implemented. 
 		
-		//Clarence: 9 Jan 2023
-		//Another issue I encounter is that all prints arent working. :/ 
-		//Hope can get it fixed soon, so it will be easier to code.
-		
-		//Clarence: 10 Jab 2023
-		//Prints are working NOW! THe issue at hand is the Action not passing through this Servlet
-		//Probably need the web.xml file to work, if not we CANNOT make the shit method better. 
-		//Will add update profile soon. 
-		
-		if (request.getParameter("lusername") != null || request.getParameter("lusername") != "" ) {
-			//Simple shit if else here, what it do is that it see whether this field is filled. If the field is filed
-			//That means that they are in the login page, then we will call the login function ONLY!
-			System.out.println("Login passed!");
-			login(request, response);
-		}
-		else {
-			//Otherwise do the register function.
-			System.out.println("Register passed!");
-			register(request, response);
-		}
-//		String action = request.getServletPath();
-//		switch (action) {
-//		case "/login.jsp":
-//			register(request, response);
-//			break;
-//		case "UserServlet/login":
+//		if (request.getParameter("lusername") != null || request.getParameter("lusername") != "" ) {
+//			//Simple shit if else here, what it do is that it see whether this field is filled. If the field is filed
+//			//That means that they are in the login page, then we will call the login function ONLY!
+//			System.out.println("Login passed!");
 //			login(request, response);
-//			break;
-//		} 
+//		}
+//		else {
+//			//Otherwise do the register function.
+//			System.out.println("Register passed!");
+//			register(request, response);
+//		}
+		
+		String action = request.getServletPath(); //Get the route name
+		try {
+			switch (action) {
+			case "/UserServlet/login":
+				login(request, response);
+				break;
+			case "/UserServlet/register":
+				register(request, response);
+				break;
+			}
+		} catch (ServletException ex) {
+			throw new ServletException(ex);
+		}
+		
 	}
 
-	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { //Login user function
 		System.out.print("LOGIN HERE!!!!");
+		//Getting the login form info from login.jsp
 		String username = request.getParameter("lusername");
 		String password = request.getParameter("lpassword");
-		System.out.print(userCollection.login("user1", "password1"));
 		
+		//If userCollection cant find user, it will retuurn a null
 		if (userCollection.login(username, password) != null) {
 			request.setAttribute("username", username);
 			request.setAttribute("password", password);
-			request.getRequestDispatcher("/login.jsp").forward(request, response);
+			response.sendRedirect("http://localhost:8080/dvopsDogtopia/index.jsp");
 			System.out.println(userCollection.login(username, password).getEmail());
+		}
+		else {
+			//Just adding a alert whenever the user fails the form 
+			PrintWriter out = response.getWriter();
+			out.println("<script type=\"text/javascript\">");
+			out.println("alert('User or password incorrect');");
+			out.println("location='http://localhost:8080/dvopsDogtopia/login.jsp';");
+			out.println("</script>");
 		};
-		  
+		 
 	}
 
-	private void register(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		// TODO Auto-generated method stub
+	private void register(HttpServletRequest request, HttpServletResponse response) throws IOException { //Register user function
 		
+		System.out.println("REGISTER HERE!!!!");
+		System.out.println(userCollection.users.size());
+		
+		//Getting register form info from signUp.jsp
 		String username = request.getParameter("rusername");
 		String email = request.getParameter("remail");
 		String password = request.getParameter("rpassword");
 
-		userCollection.signUp(new User(username, email, password));
+		//If either username, email or password is null or empty, user form wont go through
+		if (username != null && username != "" && email != null && email != "" && password != null && password != "" ) {
+			userCollection.signUp(new User(username, email, password));
+			System.out.println(userCollection.users.size());
+			response.sendRedirect("http://localhost:8080/dvopsDogtopia/login.jsp");
+		}
+		else {
+			//Just adding a alert whenever the user fails the form 
+			PrintWriter out = response.getWriter();
+			out.println("<script type=\"text/javascript\">");
+			out.println("alert('User or password incorrect');");
+			out.println("location='http://localhost:8080/dvopsDogtopia/signUp.jsp';");
+			out.println("</script>");
+		}
+		
 	}
 
 	/**
@@ -98,9 +123,7 @@ public class UserServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		System.out.println("Here!");
-		//System.out.println(request.getContextPath());
 		
 		doGet(request, response);
 

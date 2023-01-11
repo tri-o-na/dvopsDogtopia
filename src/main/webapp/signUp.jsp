@@ -25,7 +25,7 @@
 	</nav>
 	<div class="accountformPositioning">
 		<div class="accountTitle">Please sign up.</div>
-		<form action="login.jsp" method="post">
+		<form action="<%=request.getContextPath()%>/UserServlet/register" method="post">
 			<div class="accountForm">
 
 				<div class="inputTitle1">Name</div>

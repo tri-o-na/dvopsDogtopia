@@ -25,7 +25,7 @@
 	</nav>
 	<div class="accountformPositioning">
 		<div class="accountTitle">Please sign in.</div>
-		<form action="UserServlet" method="post">
+		<form action="<%=request.getContextPath()%>/UserServlet/login" method="post">
 			<div class="accountForm">
 
 				<div class="inputTitle1">Username</div>
