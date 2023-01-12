@@ -9,7 +9,7 @@
 <title>Dogtopia</title>
 <link rel="icon" type="image/x-icon" class="logo"
 	href="DVOPS-DOGTOPIA-PAW.jpg">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../../../WEB-INF/style.css">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet"
 	href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"

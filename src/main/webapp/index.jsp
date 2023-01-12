@@ -135,7 +135,7 @@
 	</div>
 	<div class="columnDog1">
 		<div class="dog-1">
-			<a> <img src="dachshund.jpg" width="100%">
+			<a href="dogDesc.jsp" > <img src="dachshund.jpg" width="100%">
 			</a>
 			<h5 class="white-text">
 				DACHSHUND
@@ -151,6 +151,56 @@
 			</div>
 		</div>
 	</div>
+	<c:forEach var="dog" items = "${listDogs}">
+		<div class="columnDog1">
+			<div class="dog-1">
+				<a href="DogServlet/desc?name=<c:out value='${dog.dogName}'/>"> <img src="${dog.imageFile}" href="" width="100%">
+				</a>
+				<h5 class="white-text">
+					<c:out value='${dog.dogName}'/> <br> <br>
+				</h5>
+				<h6 class="yellow-text"><c:out value='${dog.heightRange}'/>kg</h6>
+				<h6 class="yellow-text1">Colours: <c:out value='${dog.colours}'/></h6>
+				<div class= "stars">
+					<c:if test='${dog.rating == 1}'>
+						<i class="fa fa-star"></i>
+		                <i class="fa fa-star none"></i>
+		                <i class="fa fa-star none"></i>                
+		                <i class="fa fa-star none"></i>
+		                <i class="fa fa-star none"></i>
+					</c:if>
+					<c:if test='${dog.rating == 2}'>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+		                <i class="fa fa-star none"></i>
+		                <i class="fa fa-star none"></i>                   
+		                <i class="fa fa-star none"></i>
+					</c:if>
+					<c:if test='${dog.rating == 3}'>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+		               	<i class="fa fa-star none"></i>
+		                <i class="fa fa-star none"></i>	                
+					</c:if>
+					<c:if test='${dog.rating == 4}'>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+		                <i class="fa fa-star"></i>
+		                <i class="fa fa-star"></i>
+		               	<i class="fa fa-star none"></i>
+					</c:if>
+					<c:if test='${dog.rating == 5}'>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+		                <i class="fa fa-star"></i>
+		                <i class="fa fa-star"></i>
+		                <i class="fa fa-star"></i>
+					</c:if>
+				</div>
+			</div>
+		</div>
+	</c:forEach>
 
 </body>
 </html>

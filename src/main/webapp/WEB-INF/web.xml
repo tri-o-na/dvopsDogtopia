@@ -25,4 +25,14 @@
 		<url-pattern>/UserServlet/edit</url-pattern>
 		<url-pattern>/UserServlet/logout</url-pattern>		
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DogServlet</servlet-name>
+		<servlet-class>com.dvops.maven.eclipse.DogServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DogServlet</servlet-name>
+		<url-pattern>/DogServlet/desc</url-pattern>
+	</servlet-mapping>
 </web-app>
