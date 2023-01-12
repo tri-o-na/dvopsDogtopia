@@ -28,7 +28,7 @@ public class DogServlet extends HttpServlet {
 		case "/DogServlet/desc":
 			getDogDesc(request, response);
 			break;
-		default :
+		case "/DogServlet/home" :
 			listDogs(request, response);
 			break;
 		}

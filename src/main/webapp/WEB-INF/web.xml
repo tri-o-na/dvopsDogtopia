@@ -34,5 +34,6 @@
 	<servlet-mapping>
 		<servlet-name>DogServlet</servlet-name>
 		<url-pattern>/DogServlet/desc</url-pattern>
+		<url-pattern>/DogServlet/home</url-pattern>		
 	</servlet-mapping>
 </web-app>

@@ -9,7 +9,7 @@
 <title>Dogtopia</title>
 <link rel="icon" type="image/x-icon" class="logo"
 	href="DVOPS-DOGTOPIA-PAW.jpg">
-<link rel="stylesheet" href="../../../WEB-INF/style.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/style.css">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet"
 	href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -19,7 +19,7 @@
 <body>
 	<nav class="navbar">
 		<div>
-			<a href="index.jsp"><img class="logo" src="DVOPS-DOGTOPIA.jpg"
+			<a href="index.jsp"><img class="logo" src="<%=request.getContextPath()%>/DVOPS-DOGTOPIA.jpg"
 				width="18%"> </a>
 			<div class="tabs">
 				<a class="top_title" href="index.jsp"> HOME</a> 
@@ -39,24 +39,54 @@
 	</nav>
 	<div class="desc">
 		<div class="column1">
-			<img src="german-shepherd.jpg" width="100%">
+			<img src="<%=request.getContextPath()%>/${dog.imageFile}" width="100%">
 		</div>
 			<div class="descText">
-			<h4 class="dog-title">GERMAN SHEPHERD</h4>
+			<h4 class="dog-title"><c:out value='${dog.dogName}'/></h4>
 			<p class="dog-text">
-				Height: 55 - 65cm <br> 
-				Weight: 20 - 40kg <br> 
-				Colours: Black, Black+Tan, Sable, Grey, Red+Black, Black+Silver <br>
-				Life Span: 10 - 14 Years <br> 
-				Price Range: $1,500 - $3,000 <br>
+				Height: <c:out value='${dog.heightRange}'/>cm <br> 
+				Weight: <c:out value='${dog.weightRange}'/>kg <br> 
+				Colours: <c:out value='${dog.colours}'/> <br>
+				Life Span: <c:out value='${dog.lifeSpan}'/> Years <br> 
+				Price Range: <c:out value='${dog.priceRange}'/> <br>
 			</p>
 			<br>
 			<div class= "stars1">
-				<i class="fa fa-star have"></i>
-                <i class="fa fa-star have"></i>
-                <i class="fa fa-star have"></i>
-                <i class="fa fa-star have"></i>
-                <i class="fa fa-star none1"></i>
+				<c:if test='${dog.rating == 1}'>
+					<i class="fa fa-star have"></i>
+	                <i class="fa fa-star none1"></i>
+	                <i class="fa fa-star none1"></i>
+	                <i class="fa fa-star none1"></i>
+	                <i class="fa fa-star none1"></i>
+				</c:if>
+				<c:if test='${dog.rating == 2}'>
+					<i class="fa fa-star have"></i>
+	                <i class="fa fa-star have"></i>
+	                <i class="fa fa-star none1"></i>
+	                <i class="fa fa-star none1"></i>
+	                <i class="fa fa-star none1"></i>
+				</c:if>
+				<c:if test='${dog.rating == 3}'>
+					<i class="fa fa-star have"></i>
+	                <i class="fa fa-star have"></i>
+	                <i class="fa fa-star have"></i>
+	                <i class="fa fa-star none1"></i>
+	                <i class="fa fa-star none1"></i>
+				</c:if>
+				<c:if test='${dog.rating == 4}'>
+					<i class="fa fa-star have"></i>
+	                <i class="fa fa-star have"></i>
+	                <i class="fa fa-star have"></i>
+	                <i class="fa fa-star have"></i>
+	                <i class="fa fa-star none1"></i>
+				</c:if>
+				<c:if test='${dog.rating == 5}'>
+					<i class="fa fa-star have"></i>
+	                <i class="fa fa-star have"></i>
+	                <i class="fa fa-star have"></i>
+	                <i class="fa fa-star have"></i>
+	                <i class="fa fa-star have"></i>
+				</c:if>
 			</div>
 		</div>
 	</div>	
