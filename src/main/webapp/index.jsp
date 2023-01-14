@@ -24,7 +24,6 @@
 			<div class="tabs">
 				<a class="top_title_main" href="index.jsp"> HOME</a> 
 				<a class="top_title" href="about-us.jsp"> ABOUT US</a> 
-				<a class="top_title" href="care.jsp"> CARE</a>
 				<c:if test='${sessionScope.username == null}'>
 					<a class="top_title" href="signUp.jsp"> Sign Up</a>
 				</c:if>
