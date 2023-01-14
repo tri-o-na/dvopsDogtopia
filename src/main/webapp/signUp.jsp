@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,35 +14,31 @@
 	<nav class="navbar navbar-expand-md">
 		<div>
 			<img class="logo" src="DVOPS-DOGTOPIA.jpg" width="18%">
-			<div class= "tabs">
-			<a class="top_title" href="index.jsp"> HOME</a> 
-			<a class="top_title" href="about-us.jsp"> ABOUT US</a> 
-			<a class="top_title" href="care.jsp"> CARE</a> 
-			<a class="top_title_main" href="signUp.jsp"> ACCOUNT</a>
+			<div class="tabs">
+				<a class="top_title" href="index.jsp"> HOME</a> 
+				<a class="top_title" href="about-us.jsp"> ABOUT US</a> 
+				<a class="top_title"href="care.jsp"> CARE</a> 
+				<a class="top_title_main" href="signUp.jsp"> ACCOUNT</a>
 			</div>
 
 		</div>
 	</nav>
 	<div class="accountformPositioning">
 		<div class="accountTitle">Please sign up.</div>
-	 	<div class="accountForm">
-		 	<form>
-				<div class="inputTitle1">
-					Name
-				</div>
-				<input type="text" class="inputBox">	
-				<div class="inputTitle">
-					Email
-				</div>
-				<input type="text" class="inputBox">
-				<div class="inputTitle">
-					Password 
-				</div>
-				<input type="text" class="inputBox">	 	
-		 	</form>
-		</div>
-		<a href="login.jsp" class="linkToSignIn">Have An Account? Sign In Here</a>
-		<button class="formButton">Sign Up</button>
+		<form action="<%=request.getContextPath()%>/UserServlet/register" method="post">
+			<div class="accountForm">
+
+				<div class="inputTitle1">Name</div>
+				<input type="text" class="inputBox" name="rusername">
+				<div class="inputTitle">Email</div>
+				<input type="text" class="inputBox" name="remail">
+				<div class="inputTitle">Password</div>
+				<input type="text" class="inputBox" name="rpassword">
+
+			</div>
+			<a href="login.jsp" class="linkToSignIn">Have An Account? Sign InHere</a> 
+			<input class="formButton" type="submit" value="Sign Up" />
+		</form>
 	</div>
 </body>
 </html>
