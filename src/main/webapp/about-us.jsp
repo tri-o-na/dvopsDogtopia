@@ -17,8 +17,7 @@
 			<img class="logo" src="DVOPS-DOGTOPIA.jpg" width="18%">
 			<div class="tabs">
 				<a class="top_title" href="index.jsp"> HOME</a> <a
-					class="top_title_main" href="about-us.jsp"> ABOUT US</a> <a
-					class="top_title" href="care.jsp"> CARE</a>
+					class="top_title_main" href="about-us.jsp"> ABOUT US</a>
 				<c:if test='${sessionScope.username == null}'>
 					<a class="top_title" href="signUp.jsp"> Sign Up</a>
 				</c:if>

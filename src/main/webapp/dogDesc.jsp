@@ -24,7 +24,6 @@
 			<div class="tabs">
 				<a class="top_title" href="index.jsp"> HOME</a> 
 				<a class="top_title" href="about-us.jsp"> ABOUT US</a> 
-				<a class="top_title" href="care.jsp"> CARE</a> 
 				<c:if test='${sessionScope.username == null}'>
 					<a class="top_title" href="signUp.jsp"> Sign Up</a>
 				</c:if>
@@ -93,7 +92,7 @@
 	<br><br><br><br>
 	<br><br><br>
 		<h4 class="review-title">REVIEWS</h4>
-		<a class="add-a-review-btn" onclick="window.location.href='addReview.jsp'">ADD A REVIEW</a>
+		<a id="addReview" class="add-a-review-btn" onclick="window.location.href='<%=request.getContextPath()%>/addReview.jsp'">ADD A REVIEW</a>
 	<div class="columnReviews1">
 		<div class="review-1">
 			<p class="review-text">
