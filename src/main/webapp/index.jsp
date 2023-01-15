@@ -25,7 +25,7 @@
 				<a class="top_title_main" href="index.jsp"> HOME</a> 
 				<a class="top_title" href="about-us.jsp"> ABOUT US</a> 
 				<c:if test='${sessionScope.username == null}'>
-					<a class="top_title" href="signUp.jsp"> Sign Up</a>
+					<a class="top_title" href="<%=request.getContextPath()%>/signUp.jsp"> Sign Up</a>
 				</c:if>
 				<c:if test='${sessionScope.username != null}'>
 					<a class="top_title" href="account.jsp"> ACCOUNT</a>
@@ -45,7 +45,7 @@
 	<c:forEach var="dog" items = "${listDogs}">
 		<div class="columnDog1">
 			<div class="dog-1">
-				<a href="<%=request.getContextPath()%>/DogServlet/desc?name=<c:out value='${dog.dogName}'/>"> <img src="<%=request.getContextPath()%>/${dog.imageFile}" width="100%">
+				<a href="<%=request.getContextPath()%>/DogServlet/desc?name=<c:out value='${dog.dogName}'/>"> <img id="${dog.dogName}" src="<%=request.getContextPath()%>/${dog.imageFile}" width="100%">
 				</a>
 				<h5 class="white-text">
 					<c:out value='${dog.dogName}'/> <br> <br>
