@@ -7,7 +7,7 @@
         <methods>
           <include name="beforeTest"/>
           <include name="afterTest"/>
-          <include name="checkSignUp"/>
+          <include name="checkUpdateUser"/>
         </methods>
       </class> <!-- com.dvops.maven.eclipse.DVOPSTest -->
     </classes>
