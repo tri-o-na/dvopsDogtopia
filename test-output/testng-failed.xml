@@ -5,9 +5,10 @@
     <classes>
       <class name="com.dvops.maven.eclipse.DVOPSTest">
         <methods>
+          <include name="checkAboutUs"/>
           <include name="beforeTest"/>
           <include name="afterTest"/>
-          <include name="checkSignUp"/>
+          <include name="checkDogDesc"/>
         </methods>
       </class> <!-- com.dvops.maven.eclipse.DVOPSTest -->
     </classes>
