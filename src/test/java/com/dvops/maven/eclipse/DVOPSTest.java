@@ -17,6 +17,7 @@ public class DVOPSTest {
 	
 	  //declare Selenium WebDriver
 	  private WebDriver webDriver;	
+	  UserCollection userCollection = new UserCollection();
   @Test
   public void checkDogDesc() {
 	  	//Note: Must have server running to access the following test
@@ -33,41 +34,134 @@ public class DVOPSTest {
 	    Assert.assertEquals(webDriver.findElement(By.className("dog-title")).getText(), "GERMAN SHEPHERD");
 	  }
   
-  
-  @Test
+  @Test(priority = 1)
   public void checkSignUp() {
 	  	//Note: Must have server running to access the following test.
-	    webDriver.navigate().to("http://localhost:8080/dvopsDogtopia/");
+	  	webDriver.navigate().to("http://localhost:8080/dvopsDogtopia/DogServlet/home");
 	    
 	    //For some reason selenium doesnt want to cooperate, so I decided to do a more "horrible" fix and make it work.
 	    //Just making the window be clickable, idk why selenium really likes to click outside of the area. 
 	    webDriver.manage().window().setSize(new Dimension(1388, 824));
 	    
-	    //Find and click signUp page link.
-	    webDriver.findElement(By.cssSelector("a[href='signUp.jsp']")).click();
-	    
-	    //Find and click login page link.
-	    webDriver.findElement(By.cssSelector("a[href='login.jsp']")).click();
+	    webDriver.findElement(By.linkText("Sign Up")).click();
+	    webDriver.findElement(By.name("rusername")).click();
+	    webDriver.findElement(By.name("rusername")).sendKeys("testuser1");
+	    webDriver.findElement(By.name("remail")).click();
+	    webDriver.findElement(By.name("remail")).sendKeys("testuser1@gmail.com");
+	    webDriver.findElement(By.name("rpassword")).click();
+	    webDriver.findElement(By.name("rpassword")).sendKeys("testpassword1");
+	    webDriver.findElement(By.cssSelector(".formButton")).click();
 	    
 	    //Confirm that it works by comparing the Text inside accountTitle.
 	    Assert.assertEquals(webDriver.findElement(By.className("accountTitle")).getText(), "Please sign in.");
-	  }
+	  } 
   
-  @Test
-  public void checkAboutUs() {
+  @Test(priority = 2)
+  public void checkLogin() {
 	  	//Note: Must have server running to access the following test.
-	    webDriver.navigate().to("http://localhost:8080/dvopsDogtopia/");
+	  	webDriver.navigate().to("http://localhost:8080/dvopsDogtopia/DogServlet/home");
 	    
 	    //For some reason selenium doesnt want to cooperate, so I decided to do a more "horrible" fix and make it work.
 	    //Just making the window be clickable, idk why selenium really likes to click outside of the area. 
 	    webDriver.manage().window().setSize(new Dimension(1388, 824));
 	    
-	    //Find and click about-us link.
-	    webDriver.findElement(By.cssSelector("a[href='about-us.jsp']")).click();
+	    webDriver.findElement(By.linkText("Sign Up")).click();
+	    webDriver.findElement(By.linkText("Have An Account? Sign In Here")).click();
+	    webDriver.findElement(By.name("lusername")).click();
+	    webDriver.findElement(By.name("lusername")).sendKeys("testuser1");
+	    webDriver.findElement(By.name("lpassword")).click();
+	    webDriver.findElement(By.name("lpassword")).sendKeys("testpassword1");
+	    webDriver.findElement(By.cssSelector(".formButton")).click();
+
 	    
-	    //Confirm that it works by comparing the Text inside aboutUsTitle.
-	    Assert.assertEquals(webDriver.findElement(By.className("aboutUsTitle")).getText(), "About us");
-	  }
+	    //Confirm that it works by comparing the Text inside accountTitle.
+	    Assert.assertEquals(webDriver.findElement(By.id("navAccount")).getText(), "ACCOUNT");
+	  } 
+  
+  @Test(priority = 3)
+  public void checkLogOut() {
+	  
+	  	//Note: Must have server running to access the following test.
+	  	webDriver.navigate().to("http://localhost:8080/dvopsDogtopia/DogServlet/home");
+	    
+	    //For some reason selenium doesnt want to cooperate, so I decided to do a more "horrible" fix and make it work.
+	    //Just making the window be clickable, idk why selenium really likes to click outside of the area. 
+	    webDriver.manage().window().setSize(new Dimension(1388, 824));
+	    webDriver.findElement(By.className("top_title_logout")).click();
+	    webDriver.switchTo().alert().accept();
+	    
+	    //Confirm that it works by comparing the Text inside accountTitle.
+	    Assert.assertEquals(webDriver.findElement(By.className("top_title_main")).getText(), "HOME");
+	  } 
+  
+  @Test(priority = 3)
+  public void checkUpdateUser() {
+	  	//Note: Must have server running to access the following test.
+	  	webDriver.navigate().to("http://localhost:8080/dvopsDogtopia/DogServlet/home");
+	    
+	    //For some reason selenium doesnt want to cooperate, so I decided to do a more "horrible" fix and make it work.
+	    //Just making the window be clickable, idk why selenium really likes to click outside of the area. 
+	    webDriver.manage().window().setSize(new Dimension(1388, 824));
+	    
+	    webDriver.findElement(By.linkText("Sign Up")).click();
+	    webDriver.findElement(By.linkText("Have An Account? Sign In Here")).click();
+	    webDriver.findElement(By.name("lusername")).click();
+	    webDriver.findElement(By.name("lusername")).sendKeys("testuser2");
+	    webDriver.findElement(By.name("lpassword")).click();
+	    webDriver.findElement(By.name("lpassword")).sendKeys("testpassword2");
+	    webDriver.findElement(By.cssSelector(".formButton")).click();
+	    
+	    webDriver.findElement(By.linkText("ACCOUNT")).click();
+	    webDriver.findElement(By.name("epassword")).sendKeys("3");
+	    webDriver.findElement(By.name("updateUser")).click();
+	    webDriver.findElement(By.className("top_title_logout")).click();
+	    webDriver.switchTo().alert().accept();
+	    
+	    webDriver.findElement(By.linkText("Sign Up")).click();
+	    webDriver.findElement(By.linkText("Have An Account? Sign In Here")).click();
+	    webDriver.findElement(By.name("lusername")).click();
+	    webDriver.findElement(By.name("lusername")).sendKeys("testuser2");
+	    webDriver.findElement(By.name("lpassword")).click();
+	    webDriver.findElement(By.name("lpassword")).sendKeys("testpassword23");
+	    webDriver.findElement(By.cssSelector(".formButton")).click();	    
+
+	    
+	    //Confirm that it works by comparing the Text inside accountTitle.
+	    Assert.assertEquals(webDriver.findElement(By.id("navAccount")).getText(), "ACCOUNT");
+	  } 
+  
+  @Test(priority = 4)
+  public void checkDeleteUser() {
+	  	//Note: Must have server running to access the following test.
+	  	webDriver.navigate().to("http://localhost:8080/dvopsDogtopia/DogServlet/home");
+	    
+	    //For some reason selenium doesnt want to cooperate, so I decided to do a more "horrible" fix and make it work.
+	    //Just making the window be clickable, idk why selenium really likes to click outside of the area. 
+	    webDriver.manage().window().setSize(new Dimension(1388, 824));
+	    
+	    webDriver.findElement(By.linkText("Sign Up")).click();
+	    webDriver.findElement(By.linkText("Have An Account? Sign In Here")).click();
+	    webDriver.findElement(By.name("lusername")).click();
+	    webDriver.findElement(By.name("lusername")).sendKeys("testuser2");
+	    webDriver.findElement(By.name("lpassword")).click();
+	    webDriver.findElement(By.name("lpassword")).sendKeys("testpassword23");
+	    webDriver.findElement(By.cssSelector(".formButton")).click();
+	    
+	    webDriver.findElement(By.linkText("ACCOUNT")).click();
+	    webDriver.findElement(By.name("deleteUser")).click();
+	    
+	    webDriver.findElement(By.linkText("Sign Up")).click();
+	    webDriver.findElement(By.linkText("Have An Account? Sign In Here")).click();
+	    webDriver.findElement(By.name("lusername")).click();
+	    webDriver.findElement(By.name("lusername")).sendKeys("testuser2");
+	    webDriver.findElement(By.name("lpassword")).click();
+	    webDriver.findElement(By.name("lpassword")).sendKeys("testpassword23");
+	    webDriver.findElement(By.cssSelector(".formButton")).click();	    
+
+	    
+	    //Confirm that it works by comparing the Text inside accountTitle.
+	    Assert.assertEquals(webDriver.switchTo().alert().getText(), "User does not exist, or inputted User/Password incorrect");
+	  } 
   
   @BeforeTest
   public void beforeTest() {
