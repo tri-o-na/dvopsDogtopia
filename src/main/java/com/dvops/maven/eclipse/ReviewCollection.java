@@ -21,19 +21,19 @@ public class ReviewCollection {
 //    	return null;
 //	}
 	
-//	public boolean signUp (Review review) {
-//    	for (Review r : reviews) { 		      
-//            if(r.getUsername().equals(review.getUsername())) return false;
-//
-//       }
-//        reviews.add(review);
-//        return true; 
-//	}
+	public boolean addReview (Review review) {
+    	for (Review r : reviews) { 		      
+            if(r.getUsername().equals(review.getUsername()) && r.getDogName().equals(review.getDogName())) return false;
+
+       }
+        reviews.add(review);
+        return true; 
+	}
 	
-	public void editReview (String username, String dogName, String review, int rating, String oldpass) {
+	public void editReview (String username, String dogName, String review, int rating) {
 		Review updatedReview = new Review(username, dogName, review, rating);
     	for (Review r: reviews) { 		      
-            if(r.getUsername().equals(username) && r.getDogName().equals(oldpass)) {
+            if(r.getUsername().equals(username) && r.getDogName().equals(dogName)) {
             	reviews.set(reviews.indexOf(r), updatedReview);
             };
        }
