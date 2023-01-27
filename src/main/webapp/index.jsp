@@ -19,16 +19,16 @@
 <body>
 	<nav class="navbar">
 		<div>
-			<a href="index.jsp"><img class="logo" src="<%=request.getContextPath()%>/DVOPS-DOGTOPIA.jpg"
+			<a href="<%=request.getContextPath()%>/index.jsp"><img class="logo" src="<%=request.getContextPath()%>/DVOPS-DOGTOPIA.jpg"
 				width="18%"> </a>
 			<div class="tabs">
 				<a class="top_title_main" href="index.jsp"> HOME</a> 
-				<a class="top_title" href="about-us.jsp"> ABOUT US</a> 
+				<a class="top_title" href="<%=request.getContextPath()%>/about-us.jsp"> ABOUT US</a> 
 				<c:if test='${sessionScope.username == null}'>
 					<a class="top_title" href="<%=request.getContextPath()%>/signUp.jsp"> Sign Up</a>
 				</c:if>
 				<c:if test='${sessionScope.username != null}'>
-					<a class="top_title" href="account.jsp"> ACCOUNT</a>
+					<a class="top_title" href="<%=request.getContextPath()%>/account.jsp"> ACCOUNT</a>
 					<form action="<%=request.getContextPath()%>/UserServlet/logout" method="post">
 						<input class="top_title_logout" type="submit" value="LOG OUT"/>
 					</form>

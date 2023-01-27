@@ -48,7 +48,7 @@ public class Review {
 	}
 
 
-	public int setRating() {
+	public int getRating() {
 		return rating;
 	}
 
