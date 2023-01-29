@@ -14,6 +14,19 @@ public class ReviewCollection {
 		return reviews;
 	}
 	
+	public Review getOneDogReview(String dogName) {
+    	for (Review r : reviews) { 		      
+            if(r.getDogName().equals(dogName)) return r;
+       }
+    	return null;
+	}
+	
+	public Review getOneReview(String username, String dogName) {
+    	for (Review r : reviews) { 		      
+            if(r.getDogName().equals(dogName) && r.getUsername().equals(username)) return r;
+       }
+    	return null;
+	}
 //	public Review addReview(String username, String review, int rating) {
 //    	for (Review r : reviews) { 		      
 //            if(r.getUsername().equals(username) && r.getPassword().equals(password)) return r;
@@ -22,7 +35,7 @@ public class ReviewCollection {
 //	}
 	
 	public boolean addReview (Review review) {
-    	for (Review r : reviews) { 		      
+    	for (Review r : reviews) { 		       
             if(r.getUsername().equals(review.getUsername()) && r.getDogName().equals(review.getDogName())) return false;
 
        }
