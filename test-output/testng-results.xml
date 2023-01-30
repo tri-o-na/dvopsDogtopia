@@ -2,40 +2,40 @@
 <testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-30T19:04:47 SGT" name="Default suite" finished-at="2023-01-30T19:04:55 SGT" duration-ms="7928">
+  <suite started-at="2023-01-30T19:55:46 SGT" name="Default suite" finished-at="2023-01-30T19:55:51 SGT" duration-ms="5193">
     <groups>
     </groups>
-    <test started-at="2023-01-30T19:04:47 SGT" name="Default test" finished-at="2023-01-30T19:04:55 SGT" duration-ms="7928">
+    <test started-at="2023-01-30T19:55:46 SGT" name="Default test" finished-at="2023-01-30T19:55:51 SGT" duration-ms="5193">
       <class name="com.dvops.maven.eclipse.DVOPSTest">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:04:47 SGT" name="beforeTest" finished-at="2023-01-30T19:04:49 SGT" duration-ms="1480" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:55:46 SGT" name="beforeTest" finished-at="2023-01-30T19:55:47 SGT" duration-ms="1240" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="checkDogDesc()[pri:0, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:04:49 SGT" name="checkDogDesc" finished-at="2023-01-30T19:04:52 SGT" duration-ms="2921" status="PASS">
+        <test-method signature="checkDogDesc()[pri:0, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:55:47 SGT" name="checkDogDesc" finished-at="2023-01-30T19:55:48 SGT" duration-ms="482" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkDogDesc -->
-        <test-method signature="checkSignUp()[pri:1, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:04:52 SGT" name="checkSignUp" finished-at="2023-01-30T19:04:52 SGT" duration-ms="575" status="PASS">
+        <test-method signature="checkSignUp()[pri:1, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:55:48 SGT" name="checkSignUp" finished-at="2023-01-30T19:55:48 SGT" duration-ms="533" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkSignUp -->
-        <test-method signature="checkLogin()[pri:2, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:04:52 SGT" name="checkLogin" finished-at="2023-01-30T19:04:53 SGT" duration-ms="503" status="PASS">
+        <test-method signature="checkLogin()[pri:2, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:55:48 SGT" name="checkLogin" finished-at="2023-01-30T19:55:49 SGT" duration-ms="497" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkLogin -->
-        <test-method signature="checkLogOut()[pri:3, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:04:53 SGT" name="checkLogOut" finished-at="2023-01-30T19:04:53 SGT" duration-ms="239" status="PASS">
+        <test-method signature="checkLogOut()[pri:3, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:55:49 SGT" name="checkLogOut" finished-at="2023-01-30T19:55:49 SGT" duration-ms="242" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkLogOut -->
-        <test-method signature="checkUpdateUser()[pri:3, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:04:53 SGT" name="checkUpdateUser" finished-at="2023-01-30T19:04:54 SGT" duration-ms="1122" status="PASS">
+        <test-method signature="checkUpdateUser()[pri:3, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:55:49 SGT" name="checkUpdateUser" finished-at="2023-01-30T19:55:50 SGT" duration-ms="1134" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkUpdateUser -->
-        <test-method signature="checkDeleteUser()[pri:4, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:04:54 SGT" name="checkDeleteUser" finished-at="2023-01-30T19:04:55 SGT" duration-ms="930" status="PASS">
+        <test-method signature="checkDeleteUser()[pri:4, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:55:50 SGT" name="checkDeleteUser" finished-at="2023-01-30T19:55:51 SGT" duration-ms="918" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkDeleteUser -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:04:55 SGT" name="afterTest" finished-at="2023-01-30T19:04:55 SGT" duration-ms="123" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.dvops.maven.eclipse.DVOPSTest@4a668b6e]" started-at="2023-01-30T19:55:51 SGT" name="afterTest" finished-at="2023-01-30T19:55:51 SGT" duration-ms="113" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
