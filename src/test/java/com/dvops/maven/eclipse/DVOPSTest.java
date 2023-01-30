@@ -1,5 +1,7 @@
 package com.dvops.maven.eclipse;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.openqa.selenium.By;
 import java.lang.reflect.Method;
 
@@ -35,7 +37,7 @@ public class DVOPSTest {
 	    webDriver.findElement(By.id("GERMAN SHEPHERD")).click();
 	    
 	    //Confirm that it works by comparing the Title of the addReview.jsp.
-	    Assert.assertEquals(webDriver.findElement(By.className("dog-title")).getText(), "GERMAN SHEPHERD");
+	    AssertJUnit.assertEquals(webDriver.findElement(By.className("dog-title")).getText(), "GERMAN SHEPHERD");
 	  }
   
   @Test(priority = 1)
@@ -57,7 +59,7 @@ public class DVOPSTest {
 	    webDriver.findElement(By.cssSelector(".formButton")).click();
 	    
 	    //Confirm that it works by comparing the Text inside accountTitle.
-	    Assert.assertEquals(webDriver.findElement(By.className("accountTitle")).getText(), "Please sign in.");
+	    AssertJUnit.assertEquals(webDriver.findElement(By.className("accountTitle")).getText(), "Please sign in.");
 	  } 
   
   @Test(priority = 2)
@@ -79,7 +81,7 @@ public class DVOPSTest {
 
 	    
 	    //Confirm that it works by comparing the Text inside accountTitle.
-	    Assert.assertEquals(webDriver.findElement(By.id("navAccount")).getText(), "ACCOUNT");
+	    AssertJUnit.assertEquals(webDriver.findElement(By.id("navAccount")).getText(), "ACCOUNT");
 	  } 
   
   @Test(priority = 3)
@@ -95,7 +97,7 @@ public class DVOPSTest {
 	    webDriver.switchTo().alert().accept();
 	    
 	    //Confirm that it works by comparing the Text inside accountTitle.
-	    Assert.assertEquals(webDriver.findElement(By.className("top_title_main")).getText(), "HOME");
+	    AssertJUnit.assertEquals(webDriver.findElement(By.className("top_title_main")).getText(), "HOME");
 	    
 	  } 
   
@@ -132,7 +134,7 @@ public class DVOPSTest {
 
 	    
 	    //Confirm that it works by comparing the Text inside accountTitle.
-	    Assert.assertEquals(webDriver.findElement(By.id("navAccount")).getText(), "ACCOUNT");
+	    AssertJUnit.assertEquals(webDriver.findElement(By.id("navAccount")).getText(), "ACCOUNT");
 	    webDriver.findElement(By.className("top_title_logout")).click();
 	    webDriver.switchTo().alert().accept();
 	  } 
@@ -167,7 +169,7 @@ public class DVOPSTest {
 
 	    
 	    //Confirm that it works by comparing the Text inside accountTitle.
-	    Assert.assertEquals(webDriver.switchTo().alert().getText(), "User does not exist, or inputted User/Password incorrect");
+	    AssertJUnit.assertEquals(webDriver.switchTo().alert().getText(), "User does not exist, or inputted User/Password incorrect");
 	  } 
   
   @BeforeTest
@@ -178,12 +180,12 @@ public class DVOPSTest {
 
 	  System.setProperty("webdriver.chrome.driver", chromeDriverDir);
 
+//	  System.setProperty("webdriver.chrome.driver", System.getenv("chromeDriver"));
+	  
 	  //initialize FirefoxDriver at the start of test.
-	  webDriver = new ChromeDriver();  
+//	  webDriver = new ChromeDriver();  
 	  ChromeOptions chrome_options = new ChromeOptions();
-	  chrome_options.addArguments("--disable-extensions");
-	  chrome_options.addArguments("--disable-gpu");
-	  chrome_options.addArguments("--disable-headless");
+	  chrome_options.addArguments("--headless");
 	  webDriver = new ChromeDriver(chrome_options);
 
 	  
