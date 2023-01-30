@@ -176,10 +176,10 @@ public class DVOPSTest {
   public void beforeTest() {
 	  //Setting system properties of ChromeDriver.
 	  //to amend directory path base on your local file path.
-//	  String chromeDriverDir = "C:\\Users\\Clare\\Desktop\\chromeDriver\\chromedriver.exe";
-//
-//	  System.setProperty("webdriver.chrome.driver", chromeDriverDir);
-	  System.setProperty("webdriver.chrome.driver", System.getenv("chromedriver"));
+	  String chromeDriverDir = "C:\\Users\\Clare\\Desktop\\chromeDriver\\chromedriver.exe";
+
+	  System.setProperty("webdriver.chrome.driver", chromeDriverDir);
+	  //System.setProperty("webdriver.chrome.driver", System.getenv("chromedriver"));
 	  
 	  //initialize FirefoxDriver at the start of test.
 //	  webDriver = new ChromeDriver();  
