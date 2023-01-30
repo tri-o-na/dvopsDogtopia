@@ -1,6 +1,7 @@
 package com.dvops.maven.eclipse;
 
 import org.openqa.selenium.By;
+import java.lang.reflect.Method;
 import org.openqa.selenium.Dimension;
 //import necessary Selenium WebDriver classes
 import org.openqa.selenium.WebDriver;
@@ -9,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 
 public class DVOPSTest {
@@ -92,6 +94,7 @@ public class DVOPSTest {
 	    
 	    //Confirm that it works by comparing the Text inside accountTitle.
 	    Assert.assertEquals(webDriver.findElement(By.className("top_title_main")).getText(), "HOME");
+	    
 	  } 
   
   @Test(priority = 3)
@@ -106,9 +109,9 @@ public class DVOPSTest {
 	    webDriver.findElement(By.linkText("Sign Up")).click();
 	    webDriver.findElement(By.linkText("Have An Account? Sign In Here")).click();
 	    webDriver.findElement(By.name("lusername")).click();
-	    webDriver.findElement(By.name("lusername")).sendKeys("testuser2");
+	    webDriver.findElement(By.name("lusername")).sendKeys("testuser1");
 	    webDriver.findElement(By.name("lpassword")).click();
-	    webDriver.findElement(By.name("lpassword")).sendKeys("testpassword2");
+	    webDriver.findElement(By.name("lpassword")).sendKeys("testpassword1");
 	    webDriver.findElement(By.cssSelector(".formButton")).click();
 	    
 	    webDriver.findElement(By.linkText("ACCOUNT")).click();
@@ -120,14 +123,16 @@ public class DVOPSTest {
 	    webDriver.findElement(By.linkText("Sign Up")).click();
 	    webDriver.findElement(By.linkText("Have An Account? Sign In Here")).click();
 	    webDriver.findElement(By.name("lusername")).click();
-	    webDriver.findElement(By.name("lusername")).sendKeys("testuser2");
+	    webDriver.findElement(By.name("lusername")).sendKeys("testuser1");
 	    webDriver.findElement(By.name("lpassword")).click();
-	    webDriver.findElement(By.name("lpassword")).sendKeys("testpassword23");
+	    webDriver.findElement(By.name("lpassword")).sendKeys("testpassword13");
 	    webDriver.findElement(By.cssSelector(".formButton")).click();	    
 
 	    
 	    //Confirm that it works by comparing the Text inside accountTitle.
 	    Assert.assertEquals(webDriver.findElement(By.id("navAccount")).getText(), "ACCOUNT");
+	    webDriver.findElement(By.className("top_title_logout")).click();
+	    webDriver.switchTo().alert().accept();
 	  } 
   
   @Test(priority = 4)
@@ -142,9 +147,9 @@ public class DVOPSTest {
 	    webDriver.findElement(By.linkText("Sign Up")).click();
 	    webDriver.findElement(By.linkText("Have An Account? Sign In Here")).click();
 	    webDriver.findElement(By.name("lusername")).click();
-	    webDriver.findElement(By.name("lusername")).sendKeys("testuser2");
+	    webDriver.findElement(By.name("lusername")).sendKeys("testuser1");
 	    webDriver.findElement(By.name("lpassword")).click();
-	    webDriver.findElement(By.name("lpassword")).sendKeys("testpassword23");
+	    webDriver.findElement(By.name("lpassword")).sendKeys("testpassword13");
 	    webDriver.findElement(By.cssSelector(".formButton")).click();
 	    
 	    webDriver.findElement(By.linkText("ACCOUNT")).click();
@@ -153,9 +158,9 @@ public class DVOPSTest {
 	    webDriver.findElement(By.linkText("Sign Up")).click();
 	    webDriver.findElement(By.linkText("Have An Account? Sign In Here")).click();
 	    webDriver.findElement(By.name("lusername")).click();
-	    webDriver.findElement(By.name("lusername")).sendKeys("testuser2");
+	    webDriver.findElement(By.name("lusername")).sendKeys("testuser1");
 	    webDriver.findElement(By.name("lpassword")).click();
-	    webDriver.findElement(By.name("lpassword")).sendKeys("testpassword23");
+	    webDriver.findElement(By.name("lpassword")).sendKeys("testpassword13");
 	    webDriver.findElement(By.cssSelector(".formButton")).click();	    
 
 	    
@@ -167,13 +172,21 @@ public class DVOPSTest {
   public void beforeTest() {
 	  //Setting system properties of ChromeDriver.
 	  //to amend directory path base on your local file path.
-	  String chromeDriverDir = "C:\\Program Files\\Google\\Chrome\\chromedriver.exe";
+	  String chromeDriverDir = "C:\\Desktop\\chromedriver.exe";
 
 	  System.setProperty("webdriver.chrome.driver", chromeDriverDir);
 
 	  //initialize FirefoxDriver at the start of test.
 	  webDriver = new ChromeDriver();  
   }
+  
+//  @AfterMethod
+//  public void logout(Method method) {
+//	  if(method.getName().equals("checkLogin") || method.getName().equals("checkUpdateUser")) {
+//		    webDriver.manage().window().setSize(new Dimension(1388, 824));
+//
+//	  }
+//  }
 
   @AfterTest
   public void afterTest() {

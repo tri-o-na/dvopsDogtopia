@@ -15,7 +15,7 @@ class UserCollectionTest {
 	private User testUser2;
 	private User testUser3;
 	private User testUser4;
-	private final int USER_COLLECTION_SIZE = 3;
+	private final int USER_COLLECTION_SIZE = 4;
 
 	@BeforeEach
 	void setUp() throws Exception {
