@@ -5,12 +5,7 @@
     <classes>
       <class name="com.dvops.maven.eclipse.ReviewCollectionTest">
         <methods>
-          <include name="testGetOneReview"/>
-          <include name="testEditReview"/>
           <include name="testGetAllReview"/>
-          <include name="testGetOneDogReview"/>
-          <include name="testDeleteReview"/>
-          <include name="testAddReview"/>
         </methods>
       </class> <!-- com.dvops.maven.eclipse.ReviewCollectionTest -->
     </classes>

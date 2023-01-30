@@ -38,7 +38,7 @@
 	<div class="reviewformPositioning">
 		<div class="addReviewTitle">Add your review here.</div>
 	 	<div class="addReviewForm">
-		 	<form>
+		 	<form action="<%=request.getContextPath()%>/ReviewServlet/addReview" method="post">
 				<div class="inputTitle1">
 					Review
 				</div>
@@ -49,7 +49,7 @@
 				<input type="number" class="inputBox">		 	
 		 	</form>
 		</div>
-		<button class="formButton">Add review</button>
+		<button type="submit" class="formButton">Add review</button>
 	</div>
 </body>
 </html>

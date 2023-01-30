@@ -197,7 +197,6 @@ body {
 	width: 80rem;
 	margin-left: 15rem;
 	background-color: black;
-	
 }
 
 .columnReviews1 {
@@ -214,7 +213,6 @@ body {
 	margin-bottom: 1rem;
 	background-color: #0D3B66;
 	border-radius: .3rem;
-	padding-top: .1rem;
 }
 
 .review-text {
@@ -236,14 +234,25 @@ body {
 }
 
 .stars2 {
-	margin-left: .5rem; 
+	margin-left: .5rem;
 	font-size: 1rem;
 	/* margin-top: -6rem; */
 }
 
-.fa-pencil, .fa-trash {
+.fa-pencil {
 	font-size: 1.05rem;
 	color: #EE964B;
+	text-decoration: none;
+}
+
+.fa-trash {
+	font-size: 1.05rem;
+	color: #EE964B;
+} 
+
+.buttonTrash{
+    background-color: #0D3B66;
+    border: none;
 }
 
 /*sign up, sign in, account page*/

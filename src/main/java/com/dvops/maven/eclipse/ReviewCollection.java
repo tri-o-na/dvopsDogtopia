@@ -2,11 +2,11 @@ package com.dvops.maven.eclipse;
 
 import java.util.*;
 
-public class ReviewCollection {
+public class ReviewCollection { 
 	public ArrayList<Review> reviews = new ArrayList<>();
 	public ReviewCollection() {
 		reviews.add(new Review("user1", "GERMAN SHEPHERD", "Has separation anxiety,  is extremely active, very loyal, protects all, good at tricks", 3));
-		reviews.add(new Review("JaneTan", "GERMAN SHEPHERD", "Leaves fur all over the house, very fun to play with", 4));
+		reviews.add(new Review("JaneTan", "GOLDEN RETRIEVER", "Leaves fur all over the house, very fun to play with", 4));
 		reviews.add(new Review("ZoeMang", "GERMAN SHEPHERD", "Very sporty and loves to go on hikes with me, learns new tricks very fast, is a great companion to have!", 5));
 	}
 	
@@ -38,9 +38,9 @@ public class ReviewCollection {
     	for (Review r : reviews) { 		       
             if(r.getUsername().equals(review.getUsername()) && r.getDogName().equals(review.getDogName())) return false;
 
-       }
+       } 
         reviews.add(review);
-        return true; 
+        return true;  
 	}
 	
 	public void editReview (String username, String dogName, String review, int rating) {

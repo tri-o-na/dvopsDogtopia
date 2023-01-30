@@ -36,31 +36,19 @@ public class ReviewServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		System.out.println("Review Servlet doGet");
 		String action = request.getServletPath(); // Get the route name
-		switch (action) {
-		case "/DogServlet/desc":
-			listReviews(request, response);
+		switch (action) { 
+
+		case "/ReviewServlet/addReview":
+			addReview(request, response);
+			break;
+
+		case "/ReviewServlet/editReview":
+			editReview(request, response);
 			break;
 		}
 	}
 
-	private void listReviews(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		List<Review> reviews = new ArrayList<>();
-		System.out.println("ReviewServlet array");
-		for (Review r : reviewCollection.reviews) {
-			String username = r.getUsername();
-			String dogName = r.getDogName();
-			String review = r.getReview();
-			int rating = r.getRating();
-
-			reviews.add(new Review(username, dogName, review, rating));
-			System.out.println(r.getDogName());
-			System.out.println(r.getUsername());
-		}
-		System.out.println(reviewCollection.reviews);
-		request.setAttribute("listReviews", reviews);
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
-	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
@@ -102,6 +90,8 @@ public class ReviewServlet extends HttpServlet {
 		}
 
 	}
+	
+	private void editReview(HttpServletRequest request, HttpServletResponse response) throws IOException {}
 
 	private void deleteReview(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Delete review called");
