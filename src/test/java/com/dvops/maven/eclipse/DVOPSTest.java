@@ -2,11 +2,13 @@ package com.dvops.maven.eclipse;
 
 import org.openqa.selenium.By;
 import java.lang.reflect.Method;
+
 import org.openqa.selenium.Dimension;
 //import necessary Selenium WebDriver classes
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.Assert;
@@ -178,6 +180,13 @@ public class DVOPSTest {
 
 	  //initialize FirefoxDriver at the start of test.
 	  webDriver = new ChromeDriver();  
+	  ChromeOptions chrome_options = new ChromeOptions();
+	  chrome_options.addArguments("--disable-extensions");
+	  chrome_options.addArguments("--disable-gpu");
+	  chrome_options.addArguments("--disable-headless");
+	  webDriver = new ChromeDriver(chrome_options);
+
+	  
   }
   
 //  @AfterMethod

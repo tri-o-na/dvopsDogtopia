@@ -5,9 +5,14 @@
     <classes>
       <class name="com.dvops.maven.eclipse.DVOPSTest">
         <methods>
+          <include name="checkLogin"/>
           <include name="checkLogOut"/>
           <include name="beforeTest"/>
           <include name="afterTest"/>
+          <include name="checkDeleteUser"/>
+          <include name="checkUpdateUser"/>
+          <include name="checkDogDesc"/>
+          <include name="checkSignUp"/>
         </methods>
       </class> <!-- com.dvops.maven.eclipse.DVOPSTest -->
     </classes>
