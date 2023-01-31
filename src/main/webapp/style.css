@@ -1,6 +1,7 @@
 @charset "ISO-8859-1";
 
 /*body*/
+
 body {
 	background-color: #FAF0CA;
 }
@@ -40,6 +41,11 @@ body {
 	border: none;
 	background: transparent;
 	text-transform: uppercase;
+	padding-left: 0;
+}
+
+form.inline-form {
+	display: inline-block;
 }
 
 .top_title_main {
@@ -52,7 +58,7 @@ body {
 }
 
 .tabs {
-	margin-left: 1235px;
+	margin-left: 75rem;
 	margin-top: -4.5ch;
 	position: absolute;
 }
@@ -248,11 +254,11 @@ body {
 .fa-trash {
 	font-size: 1.05rem;
 	color: #EE964B;
-} 
+}
 
-.buttonTrash{
-    background-color: #0D3B66;
-    border: none;
+.buttonTrash {
+	background-color: #0D3B66;
+	border: none;
 }
 
 /*sign up, sign in, account page*/

@@ -49,7 +49,7 @@
 				<input type="number" class="inputBox" name="rrating">		 	
 		 	</form>
 		</div>
-		<button type="submit" class="formButton" name="addReview">Add review</button>
+		<button type="submit" class="formButton" value="addReview">Add review</button>
 	</div>
 </body>
 </html>

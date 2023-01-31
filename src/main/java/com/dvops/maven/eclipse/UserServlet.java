@@ -63,6 +63,7 @@ public class UserServlet extends HttpServlet {
 		
 		//Getting register form info from signUp.jsp
 		String username = request.getParameter("rusername");
+		System.out.println(username);
 		String email = request.getParameter("remail");
 		String password = request.getParameter("rpassword");
 
@@ -202,7 +203,7 @@ public class UserServlet extends HttpServlet {
 			request.getSession().removeAttribute("email");
 			
 			//Redirect the user to index.jsp 
-			response.sendRedirect("http://localhost:8080/dvopsDogtopia/index.jsp");
+			response.sendRedirect("http://localhost:8080/dvopsDogtopia/DogServlet/home");
 		};
 
 	}	

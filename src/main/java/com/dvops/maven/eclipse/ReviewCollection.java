@@ -39,7 +39,7 @@ public class ReviewCollection {
             if(r.getUsername().equals(review.getUsername()) && r.getDogName().equals(review.getDogName())) return false;
 
        } 
-        reviews.add(review);
+        reviews.add(review); 
         return true;  
 	}
 	

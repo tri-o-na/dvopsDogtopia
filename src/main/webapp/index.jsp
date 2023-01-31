@@ -29,7 +29,7 @@
 				</c:if>
 				<c:if test='${sessionScope.username != null}'>
 					<a id="navAccount" class="top_title" href="<%=request.getContextPath()%>/account.jsp"> ACCOUNT</a>
-					<form action="<%=request.getContextPath()%>/UserServlet/logout" method="post">
+					<form class="inline-form" action="<%=request.getContextPath()%>/UserServlet/logout" method="post">
 						<input class="top_title_logout" type="submit" value="LOG OUT"/>
 					</form>
 				</c:if>

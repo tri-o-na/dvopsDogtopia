@@ -111,88 +111,90 @@
 	<br>
 	<br>
 	<br>
-	<h4 class="review-title">REVIEWS</h4>
-	<a id="addReview" class="add-a-review-btn"
-		href="<%=request.getContextPath()%>/ReviewServlet/addReview?name=<c:out value='${dog.dogName}'/>">ADD
-		A REVIEW</a>
-	<c:forEach var="review" items="${listReviews}">
-		<div class="row reviews">
-			<div class="columnReviews1">
-				<div class="review-1">
-					<h5 class="review-username">
-						<br>
-						<c:out value='${review.username}' />
-					</h5>
-					<div class="stars2">
-						<c:if test='${review.rating == 1}'>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star none"></i>
-							<i class="fa fa-star none"></i>
-							<i class="fa fa-star none"></i>
-							<i class="fa fa-star none"></i>
-							<a class="fa fa-pencil"
-								href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
-							<button name="deleteReview" class="buttonTrash">
-								<i class="fa fa-trash"></i>
-							</button>
-						</c:if>
-						<c:if test='${review.rating == 2}'>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star none"></i>
-							<i class="fa fa-star none"></i>
-							<i class="fa fa-star none"></i>
-							<a class="fa fa-pencil"
-								href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
-							<button name="deleteReview" class="buttonTrash">
-								<i class="fa fa-trash"></i>
-							</button>
-						</c:if>
-						<c:if test='${review.rating == 3}'>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star none"></i>
-							<i class="fa fa-star none"></i>
-							<a class="fa fa-pencil"
-								href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
-							<button name="deleteReview" class="buttonTrash">
-								<i class="fa fa-trash"></i>
-							</button>
-						</c:if>
-						<c:if test='${review.rating == 4}'>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star none"></i>
-							<a class="fa fa-pencil"
-								href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
-							<button name="deleteReview" class="buttonTrash">
-								<i class="fa fa-trash"></i>
-							</button>
-						</c:if>
-						<c:if test='${review.rating == 5}'>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<a class="fa fa-pencil"
-								href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
-							<button name="deleteReview" class="buttonTrash">
-								<i class="fa fa-trash"></i>
-							</button>
-						</c:if>
-					</div>
-					<p class="review-text">
-						<c:out value='${review.review}' />
-					</p>
+	<%-- <c:if test="${not empty session.username}"> --%>
+		<h4 class="review-title">REVIEWS</h4>
+		<a id="addReview" class="add-a-review-btn"
+			href="<%=request.getContextPath()%>/ReviewServlet/addReview?rDogName=<c:out value='${dog.dogName}'/>">ADD
+			A REVIEW</a>
+		<c:forEach var="review" items="${listReviews}">
+			<div class="row reviews">
+				<div class="columnReviews1">
+					<div class="review-1">
+						<h5 class="review-username">
+							<br>
+							<c:out value='${review.username}' />
+						</h5>
+						<div class="stars2">
+							<c:if test='${review.rating == 1}'>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star none"></i>
+								<i class="fa fa-star none"></i>
+								<i class="fa fa-star none"></i>
+								<i class="fa fa-star none"></i>
+								<a class="fa fa-pencil"
+									href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
+								<button name="deleteReview" class="buttonTrash">
+									<i class="fa fa-trash"></i>
+								</button>
+							</c:if>
+							<c:if test='${review.rating == 2}'>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star none"></i>
+								<i class="fa fa-star none"></i>
+								<i class="fa fa-star none"></i>
+								<a class="fa fa-pencil"
+									href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
+								<button name="deleteReview" class="buttonTrash">
+									<i class="fa fa-trash"></i>
+								</button>
+							</c:if>
+							<c:if test='${review.rating == 3}'>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star none"></i>
+								<i class="fa fa-star none"></i>
+								<a class="fa fa-pencil"
+									href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
+								<button name="deleteReview" class="buttonTrash">
+									<i class="fa fa-trash"></i>
+								</button>
+							</c:if>
+							<c:if test='${review.rating == 4}'>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star none"></i>
+								<a class="fa fa-pencil"
+									href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
+								<button name="deleteReview" class="buttonTrash">
+									<i class="fa fa-trash"></i>
+								</button>
+							</c:if>
+							<c:if test='${review.rating == 5}'>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<a class="fa fa-pencil"
+									href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
+								<button name="deleteReview" class="buttonTrash">
+									<i class="fa fa-trash"></i>
+								</button>
+							</c:if>
+						</div>
+						<p class="review-text">
+							<c:out value='${review.review}' />
+						</p>
 
+					</div>
 				</div>
 			</div>
-		</div>
-	</c:forEach>
+		</c:forEach>
+	<%-- </c:if> --%>
 
 	<!-- <div class="row reviews">
 		<div class="columnReviews1">

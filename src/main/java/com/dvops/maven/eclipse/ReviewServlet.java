@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 public class ReviewServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	ReviewCollection reviewCollection = new ReviewCollection();
-
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -56,21 +55,22 @@ public class ReviewServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub 
 		doGet(request, response);
 	}
 
 	private void addReview(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		System.out.println("add review called");
-
-		// Getting register form info from signUp.jsp
-		String username = request.getParameter("reviewUsername");
-		String dogName = request.getParameter("rdogName");
+		
+		String username = (String) request.getSession().getAttribute("username");
+		String dogName = request.getParameter("rDogName");
+		System.out.println(username);
+		System.out.println(dogName);
+		
 		String review = request.getParameter("rreview");
 		int rating = Integer.parseInt(request.getParameter("rrating"));
 		System.out.println("add review called2");
-		// If either username, email or password is null or empty, user form wont go
-		// through
+		// If either username, email or password is null or empty, user form wont go through
 		if (review != null && review != "" && rating > 5 && rating < 0 && username != null && username != "") {
 
 			// Call user sign up function in UserCollection.java
@@ -85,7 +85,7 @@ public class ReviewServlet extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			out.println("<script type=\"text/javascript\">");
 			out.println("alert('User or password incorrect');");
-			out.println("location='http://localhost:8080/dvopsDogtopia/DogServlet/home';");
+			out.println("location='http://localhost:8080/dvopsDogtopia/DogServlet/dogDesc.jsp';");
 			out.println("</script>");
 		}
 
@@ -93,30 +93,6 @@ public class ReviewServlet extends HttpServlet {
 	
 	private void editReview(HttpServletRequest request, HttpServletResponse response) throws IOException {}
 
-	private void deleteReview(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Delete review called");
-
-		// Setting Strings usable on both functions
-		String username = (String) request.getSession().getAttribute("username");
-		String dogName = (String) request.getSession().getAttribute("dogName");
-
-		if (request.getParameter("deleteReview") != null) {
-			System.out.println("Delete Review called");
-
-			// Call delete user function in UserCollection.java
-			reviewCollection.deleteReview(username, dogName);
-
-			// Removing all of the sessionStorage as user have effectively logged out
-			request.getSession().removeAttribute("username");
-			request.getSession().removeAttribute("dogName");
-			request.getSession().removeAttribute("review");
-			request.getSession().removeAttribute("rating");
-
-			// Redirect the user to index.jsp
-			response.sendRedirect("http://localhost:8080/dvopsDogtopia/DogServlet/home");
-		}
-		;
-
-	}
+	
 
 }

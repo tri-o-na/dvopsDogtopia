@@ -29,6 +29,7 @@ public class DogServlet extends HttpServlet {
 		case "/DogServlet/desc":
 			getDogDesc(request, response);
 			listReviews(request, response);
+			deleteReview(request, response);
 			break;
 		case "/DogServlet/home" :
 			listDogs(request, response);
@@ -78,7 +79,7 @@ public class DogServlet extends HttpServlet {
 			String imageFile = d.getImageFile();
 			
 			dogs.add(new Dog(dogName, heightRange, weightRange, colours, lifeSpan, priceRange, rating, imageFile));
-			System.out.println(d.getDogName());
+			System.out.println(dogName);
 		}
 		System.out.println(dogCollection.dogs);
 		request.setAttribute("listDogs", dogs);
@@ -112,6 +113,32 @@ public class DogServlet extends HttpServlet {
 			throws ServletException, IOException {
 		System.out.println("DogServlet doPost");
 		doGet(request, response);
+	}
+	
+	private void deleteReview(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Delete review called");
+
+		// Setting Strings usable on both functions
+		String username = (String) request.getSession().getAttribute("username");
+		String dogName = (String) request.getSession().getAttribute("dogName");
+
+		if (request.getParameter("deleteReview") != null) {
+			System.out.println("Delete Review called");
+
+			// Call delete user function in UserCollection.java
+			reviewCollection.deleteReview(username, dogName);
+
+			// Removing all of the sessionStorage as user have effectively logged out
+			request.getSession().removeAttribute("username");
+			request.getSession().removeAttribute("dogName");
+			request.getSession().removeAttribute("review");
+			request.getSession().removeAttribute("rating");
+
+			// Redirect the user to index.jsp
+			response.sendRedirect("http://localhost:8080/dvopsDogtopia/DogServlet/home");
+		}
+		;
+
 	}
 
 }
