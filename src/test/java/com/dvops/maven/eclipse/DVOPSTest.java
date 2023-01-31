@@ -11,6 +11,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.Assert;
@@ -28,10 +30,14 @@ public class DVOPSTest {
   public void checkDogDesc() {
 	  	//Note: Must have server running to access the following test
 	    webDriver.navigate().to("http://localhost:8080/dvopsDogtopia/DogServlet/home");
+
 	    
 	    //For some reason selenium doesnt want to cooperate, so I decided to do a more "horrible" fix and make it work
 	    //Just making the window be clickable, idk why selenium really likes to click outside of the area. 
 	    webDriver.manage().window().setSize(new Dimension(1388, 824));
+	    
+	    WebDriverWait wait = new WebDriverWait(webDriver, 50);
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("home-page-dog-img")));	    
 	    
 	    //Find clickable img. 
 	    webDriver.findElement(By.id("GERMAN SHEPHERD")).click();
@@ -48,6 +54,9 @@ public class DVOPSTest {
 	    //For some reason selenium doesnt want to cooperate, so I decided to do a more "horrible" fix and make it work.
 	    //Just making the window be clickable, idk why selenium really likes to click outside of the area. 
 	    webDriver.manage().window().setSize(new Dimension(1388, 824));
+	    
+	    WebDriverWait wait = new WebDriverWait(webDriver, 50);
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("home-page-dog-img")));	
 	    
 	    webDriver.findElement(By.linkText("Sign Up")).click();
 	    webDriver.findElement(By.name("rusername")).click();
@@ -71,6 +80,9 @@ public class DVOPSTest {
 	    //Just making the window be clickable, idk why selenium really likes to click outside of the area. 
 	    webDriver.manage().window().setSize(new Dimension(1388, 824));
 	    
+	    WebDriverWait wait = new WebDriverWait(webDriver, 50);
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("home-page-dog-img")));	
+	    
 	    webDriver.findElement(By.linkText("Sign Up")).click();
 	    webDriver.findElement(By.linkText("Have An Account? Sign In Here")).click();
 	    webDriver.findElement(By.name("lusername")).click();
@@ -93,6 +105,10 @@ public class DVOPSTest {
 	    //For some reason selenium doesnt want to cooperate, so I decided to do a more "horrible" fix and make it work.
 	    //Just making the window be clickable, idk why selenium really likes to click outside of the area. 
 	    webDriver.manage().window().setSize(new Dimension(1388, 824));
+	    
+	    WebDriverWait wait = new WebDriverWait(webDriver, 50);
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("home-page-dog-img")));	
+	    
 	    webDriver.findElement(By.className("top_title_logout")).click();
 	    webDriver.switchTo().alert().accept();
 	    
@@ -109,6 +125,9 @@ public class DVOPSTest {
 	    //For some reason selenium doesnt want to cooperate, so I decided to do a more "horrible" fix and make it work.
 	    //Just making the window be clickable, idk why selenium really likes to click outside of the area. 
 	    webDriver.manage().window().setSize(new Dimension(1388, 824));
+	    
+	    WebDriverWait wait = new WebDriverWait(webDriver, 50);
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("home-page-dog-img")));	
 	    
 	    webDriver.findElement(By.linkText("Sign Up")).click();
 	    webDriver.findElement(By.linkText("Have An Account? Sign In Here")).click();
@@ -147,6 +166,9 @@ public class DVOPSTest {
 	    //For some reason selenium doesnt want to cooperate, so I decided to do a more "horrible" fix and make it work.
 	    //Just making the window be clickable, idk why selenium really likes to click outside of the area. 
 	    webDriver.manage().window().setSize(new Dimension(1388, 824));
+	    
+	    WebDriverWait wait = new WebDriverWait(webDriver, 50);
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("home-page-dog-img")));	
 	    
 	    webDriver.findElement(By.linkText("Sign Up")).click();
 	    webDriver.findElement(By.linkText("Have An Account? Sign In Here")).click();
