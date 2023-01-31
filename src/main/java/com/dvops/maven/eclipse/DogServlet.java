@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 public class DogServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	DogCollection dogCollection = new DogCollection();
+	ReviewCollection reviewCollection = new ReviewCollection();
 
 	public DogServlet() {
 		super();
@@ -27,10 +28,11 @@ public class DogServlet extends HttpServlet {
 		switch (action) {
 		case "/DogServlet/desc":
 			getDogDesc(request, response);
+			listReviews(request, response);
 			break;
 		case "/DogServlet/home" :
 			listDogs(request, response);
-			break;
+			break; 
 		}
 	}
 
@@ -41,6 +43,24 @@ public class DogServlet extends HttpServlet {
 		Dog d = dogCollection.getOneDog(name);
 		currentDog = new Dog(d.getDogName(), d.getHeightRange(), d.getWeightRange(), d.getColours(), d.getLifeSpan(), d.getPriceRange(), d.getRating(), d.getImageFile());
 		request.setAttribute("dog", currentDog);
+		List<Review> reviews = new ArrayList<>();
+		System.out.println("ReviewServlet array");
+		for (Review r : reviewCollection.reviews) {
+			String username = r.getUsername();
+			String dogName = r.getDogName();
+			String review = r.getReview();
+			int rating = r.getRating();
+
+			reviews.add(new Review(username, dogName, review, rating));
+			System.out.println(r.getDogName());
+			System.out.println(r.getUsername());
+			System.out.println(r.getReview());
+			System.out.println(r.getRating());
+			System.out.println("	");
+		}
+		System.out.println(reviewCollection.reviews);
+		request.setAttribute("listReviews", reviewCollection.reviews);
+		System.out.println(request.getAttribute("listReviews"));
 		request.getRequestDispatcher("/dogDesc.jsp").forward(request, response);
 	}
 
@@ -63,6 +83,29 @@ public class DogServlet extends HttpServlet {
 		System.out.println(dogCollection.dogs);
 		request.setAttribute("listDogs", dogs);
 		request.getRequestDispatcher("/index.jsp").forward(request, response);
+	}
+	
+	private void listReviews(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		List<Review> reviews = new ArrayList<>();
+		System.out.println("ReviewServlet array");
+		for (Review r : reviewCollection.reviews) {
+			String username = r.getUsername();
+			String dogName = r.getDogName();
+			String review = r.getReview();
+			int rating = r.getRating();
+
+			reviews.add(new Review(username, dogName, review, rating));
+			System.out.println(r.getDogName());
+			System.out.println(r.getUsername());
+			System.out.println(r.getReview());
+			System.out.println(r.getRating());
+			System.out.println("	");
+		}
+		System.out.println(reviewCollection.reviews);
+		request.setAttribute("listReviews", reviews);
+		System.out.println(request.getAttribute("listReviews"));
+		request.getRequestDispatcher("/dogDesc.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

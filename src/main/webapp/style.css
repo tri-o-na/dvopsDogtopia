@@ -27,6 +27,7 @@ body {
 	font-family: Freude;
 	text-decoration: none;
 	margin-bottom: -10ch;
+	text-transform: uppercase;
 }
 
 .top_title_logout {
@@ -38,7 +39,7 @@ body {
 	margin-bottom: -10ch;
 	border: none;
 	background: transparent;
-	
+	text-transform: uppercase;
 }
 
 .top_title_main {
@@ -47,6 +48,7 @@ body {
 	font-size: 18px;
 	font-family: Freude;
 	text-decoration: none;
+	text-transform: uppercase;
 }
 
 .tabs {
@@ -191,15 +193,22 @@ body {
 	padding-right: 0.5rem;
 }
 
+.reviews {
+	width: 80rem;
+	margin-left: 15rem;
+	background-color: black;
+}
+
 .columnReviews1 {
 	float: left;
-	width: 24%;
+	width: 20%;
+	height: 18rem;
+	margin-right: 7rem;
 }
 
 .review-1 {
 	width: 20rem;
 	height: 15rem;
-	margin-left: 15rem;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	background-color: #0D3B66;
@@ -212,7 +221,6 @@ body {
 	color: #F4D35E;
 	font-family: Omnes;
 	margin-left: 0.5rem;
-	margin-top: 0.1rem;
 }
 
 .review-username {
@@ -222,38 +230,29 @@ body {
 	color: #EE964B;
 	font-weight: lighter;
 	margin-left: 0.5rem;
-	position: absolute;
-	bottom: -2.5rem;
-}
-
-.review-username1 {
-	font-family: Freude;
-	letter-spacing: .1rem;
-	font-size: 1rem;
-	color: #EE964B;
-	font-weight: lighter;
-	margin-left: 0.5rem;
-	position: absolute;
-	bottom: -20.2rem;
+	margin-bottom: .5rem;
 }
 
 .stars2 {
-	margin-left: 10.5rem;
-	position: absolute;
-	bottom: -0.8rem;
+	margin-left: .5rem;
 	font-size: 1rem;
+	/* margin-top: -6rem; */
 }
 
-.stars-2 {
-	margin-left: 10.5rem;
-	position: absolute;
-	bottom: -18.6rem;
-	font-size: 1rem;
-}
-
-.fa-pencil, .fa-trash {
+.fa-pencil {
 	font-size: 1.05rem;
 	color: #EE964B;
+	text-decoration: none;
+}
+
+.fa-trash {
+	font-size: 1.05rem;
+	color: #EE964B;
+} 
+
+.buttonTrash{
+    background-color: #0D3B66;
+    border: none;
 }
 
 /*sign up, sign in, account page*/
@@ -388,14 +387,15 @@ body {
 }
 
 /*about us*/
-.about-us-title{
- color: #F95738;;
- font-family: Omnes; 
- letter-spacing: .12rem;
- font-size: 1.7rem;
+.about-us-title {
+	color: #F95738;;
+	font-family: Omnes;
+	letter-spacing: .12rem;
+	font-size: 1.7rem;
 }
-.about-us-dog1{
- margin-top: 5.2rem;
- margin-left: 10rem;
- margin-right: 3rem;
+
+.about-us-dog1 {
+	margin-top: 5.2rem;
+	margin-left: 10rem;
+	margin-right: 3rem;
 }
