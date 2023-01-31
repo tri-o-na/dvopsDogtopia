@@ -68,7 +68,7 @@ public class ReviewServlet extends HttpServlet {
 		String dogName = request.getParameter("rdogName");
 		String review = request.getParameter("rreview");
 		int rating = Integer.parseInt(request.getParameter("rrating"));
-
+		System.out.println("add review called2");
 		// If either username, email or password is null or empty, user form wont go
 		// through
 		if (review != null && review != "" && rating > 5 && rating < 0 && username != null && username != "") {

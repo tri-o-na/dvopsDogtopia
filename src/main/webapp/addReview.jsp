@@ -42,14 +42,14 @@
 				<div class="inputTitle1">
 					Review
 				</div>
-				<input type="text" class="inputBox">	
+				<input type="text" class="inputBox" name="rreview">	
 				<div class="inputTitle">
 					Rating 
 				</div>
-				<input type="number" class="inputBox">		 	
+				<input type="number" class="inputBox" name="rrating">		 	
 		 	</form>
 		</div>
-		<button type="submit" class="formButton">Add review</button>
+		<button type="submit" class="formButton" name="addReview">Add review</button>
 	</div>
 </body>
 </html>

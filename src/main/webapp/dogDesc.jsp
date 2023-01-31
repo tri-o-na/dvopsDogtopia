@@ -113,7 +113,7 @@
 	<br>
 	<h4 class="review-title">REVIEWS</h4>
 	<a id="addReview" class="add-a-review-btn"
-		href="<%=request.getContextPath()%>/ReviewServlet/addReview?name=<c:out value='${review.dogName}'/>">ADD
+		href="<%=request.getContextPath()%>/ReviewServlet/addReview?name=<c:out value='${dog.dogName}'/>">ADD
 		A REVIEW</a>
 	<c:forEach var="review" items="${listReviews}">
 		<div class="row reviews">
