@@ -105,13 +105,13 @@ public class UserServlet extends HttpServlet {
 			request.getSession().setAttribute("password", password);
 			
 			//Redirecting user to index.jsp
-			response.sendRedirect("http://localhost:8080/dvopsDogtopia/index.jsp");		
+			response.sendRedirect("http://localhost:8080/dvopsDogtopia/DogServlet/home");		
 		}
 		else {
 			//Just adding a alert whenever the user fails the form 
 			PrintWriter out = response.getWriter();
 			out.println("<script type=\"text/javascript\">");
-			out.println("alert('User or password incorrect');");
+			out.println("alert('User does not exist, or inputted User/Password incorrect');");
 			out.println("location='http://localhost:8080/dvopsDogtopia/login.jsp';");
 			out.println("</script>");
 		};

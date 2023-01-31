@@ -1,12 +1,15 @@
 package com.dvops.maven.eclipse;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 class DogCollectionTest {
 	
@@ -20,6 +23,7 @@ class DogCollectionTest {
 	private final int DOG_COLLECTION_SIZE = 6;
 	
 	
+	@BeforeMethod
 	@BeforeEach
 	void setUp() throws Exception {
 		dc = new DogCollection();
@@ -27,6 +31,7 @@ class DogCollectionTest {
 		
 	}
 
+	@AfterMethod
 	@AfterEach
 	void tearDown() throws Exception {
 	}
@@ -34,44 +39,44 @@ class DogCollectionTest {
 	@Test
 	void testGetAllDog() {
 		//Testing that all the dogs are inside.
-		assertEquals(dc.getAllDog().size(), DOG_COLLECTION_SIZE);
+		AssertJUnit.assertEquals(dc.getAllDog().size(), DOG_COLLECTION_SIZE);
 		
 		//Testing specific fields being able to retrieved through the list
 		List<Dog> testDc = dc.getAllDog();
-		assertEquals(testDc.get(0).getDogName(), "GERMAN SHEPHERD");
-		assertEquals(testDc.get(4).getDogName(), "GOLDEN RETRIEVER");
+		AssertJUnit.assertEquals(testDc.get(0).getDogName(), "GERMAN SHEPHERD");
+		AssertJUnit.assertEquals(testDc.get(4).getDogName(), "GOLDEN RETRIEVER");
 	}
 
 	@Test
 	void testGetOneDog() {
 		//Testing specific dog has been retrieved and all information is correct.
 		Dog testDog = dc.getOneDog("GERMAN SHEPHERD");
-		assertEquals(testDog.getDogName(), "GERMAN SHEPHERD");
-		assertEquals(testDog.getHeightRange(), "55 - 65");
-		assertEquals(testDog.getWeightRange(), "20 - 40");
-		assertEquals(testDog.getColours(), "Black, Black+Tan, Sable, Grey");
-		assertEquals(testDog.getLifeSpan(), "10 - 14");
-		assertEquals(testDog.getPriceRange(), "$1,500 - $3,000");
-		assertEquals(testDog.getRating(), 4);
-		assertEquals(testDog.getImageFile(), "german-shepherd.jpg");
+		AssertJUnit.assertEquals(testDog.getDogName(), "GERMAN SHEPHERD");
+		AssertJUnit.assertEquals(testDog.getHeightRange(), "55 - 65");
+		AssertJUnit.assertEquals(testDog.getWeightRange(), "20 - 40");
+		AssertJUnit.assertEquals(testDog.getColours(), "Black, Black+Tan, Sable, Grey");
+		AssertJUnit.assertEquals(testDog.getLifeSpan(), "10 - 14");
+		AssertJUnit.assertEquals(testDog.getPriceRange(), "$1,500 - $3,000");
+		AssertJUnit.assertEquals(testDog.getRating(), 4);
+		AssertJUnit.assertEquals(testDog.getImageFile(), "german-shepherd.jpg");
 		
 		//Testing specific dog is not found and returned a null value
 		Dog failTestDog = dc.getOneDog("NOT SHEPHERD");
-		assertNull(failTestDog);
+		AssertJUnit.assertNull(failTestDog);
 	}
 
 	@Test
 	void testAddDog() {	
 		//Testing adding 1 dog and affecting the size of the DogCollection
 		List<Dog> testDc = dc.getAllDog();
-		assertEquals(testDc.size(),DOG_COLLECTION_SIZE);
+		AssertJUnit.assertEquals(testDc.size(),DOG_COLLECTION_SIZE);
 		dc.addDog(testDog1);
-		assertEquals(dc.getAllDog().size(), DOG_COLLECTION_SIZE+1);
+		AssertJUnit.assertEquals(dc.getAllDog().size(), DOG_COLLECTION_SIZE+1);
 		
 		//Testing adding 1 dog but failed due to duplicated dogName and returned a null value.
 		dc.addDog(testDog1);
-		assertEquals(dc.getAllDog().size(), DOG_COLLECTION_SIZE+1);
-		assertEquals(dc.addDog(testDog1), false);
+		AssertJUnit.assertEquals(dc.getAllDog().size(), DOG_COLLECTION_SIZE+1);
+		AssertJUnit.assertEquals(dc.addDog(testDog1), false);
 	}
 
 }

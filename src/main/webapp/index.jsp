@@ -15,7 +15,7 @@
 	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
 	crossorigin="anonymous" />
 
-</head>
+</head> <!-- Testing auto deployment -->
 <body>
 	<nav class="navbar">
 		<div>
@@ -28,7 +28,7 @@
 					<a class="top_title" href="<%=request.getContextPath()%>/signUp.jsp"> Sign Up</a>
 				</c:if>
 				<c:if test='${sessionScope.username != null}'>
-					<a class="top_title" href="<%=request.getContextPath()%>/account.jsp"> ACCOUNT</a>
+					<a id="navAccount" class="top_title" href="<%=request.getContextPath()%>/account.jsp"> ACCOUNT</a>
 					<form action="<%=request.getContextPath()%>/UserServlet/logout" method="post">
 						<input class="top_title_logout" type="submit" value="LOG OUT"/>
 					</form>

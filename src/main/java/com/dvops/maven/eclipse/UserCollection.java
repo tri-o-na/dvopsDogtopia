@@ -6,6 +6,7 @@ public class UserCollection {
 	public ArrayList<User> users = new ArrayList<>();
 	public UserCollection() {
 		users.add(new User("user1", "user1@email.com", "password1"));
+		users.add(new User("testuser2", "testuser2@email.com", "testpassword2"));
 	}
 	
 	public List<User> getAllUser(){
