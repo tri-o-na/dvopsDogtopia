@@ -30,7 +30,7 @@
 				<div class="inputTitle1">Username</div>
 				<input type="text" class="inputBox" name="lusername">
 				<div class="inputTitle">Password</div>
-				<input type="text" class="inputBox" name="lpassword">
+				<input type="password" class="inputBox" name="lpassword">
 
 			</div>
 			<a href="signUp.jsp" class="linkToSignUp">No Account? Sign Up

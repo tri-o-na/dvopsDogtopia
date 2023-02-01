@@ -36,7 +36,7 @@
 				<div class="inputTitle">Email</div>
 				<input type="email" class="inputBox" name="eemail" value = "${sessionScope.email}">
 				<div class="inputTitle">Password</div>
-				<input type="text" class="inputBox" name="epassword" value = "${sessionScope.password}">
+				<input type="password" class="inputBox" name="epassword" value = "${sessionScope.password}">
 
 			</div>
 			<div style="margin-top: 3vh;">

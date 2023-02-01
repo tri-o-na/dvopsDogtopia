@@ -5,7 +5,7 @@ import java.util.*;
 public class ReviewCollection { 
 	public ArrayList<Review> reviews = new ArrayList<>();
 	public ReviewCollection() {
-		reviews.add(new Review("user1", "GERMAN SHEPHERD", "Has separation anxiety,  is extremely active, very loyal, protects all, good at tricks", 3));
+		reviews.add(new Review("user2", "GERMAN SHEPHERD", "Has separation anxiety,  is extremely active, very loyal, protects all, good at tricks", 3));
 		reviews.add(new Review("JaneTan", "GOLDEN RETRIEVER", "Leaves fur all over the house, very fun to play with", 4));
 		reviews.add(new Review("ZoeMang", "GERMAN SHEPHERD", "Very sporty and loves to go on hikes with me, learns new tricks very fast, is a great companion to have!", 5));
 	}
@@ -14,11 +14,18 @@ public class ReviewCollection {
 		return reviews;
 	}
 	
-	public Review getOneDogReview(String dogName) {
+	public List<Review> getOneDogReview(String dogName) {
+		ArrayList<Review> dogReviews = new ArrayList<>();
     	for (Review r : reviews) { 		      
-            if(r.getDogName().equals(dogName)) return r;
+            if(r.getDogName().equals(dogName)) dogReviews.add(r);
        }
-    	return null;
+    	if(dogReviews.size() != 0 || dogReviews != null) {
+    		List<Review> finalList  = dogReviews; 
+    		return finalList;
+    	}
+    	else {
+    		return null;
+    	}
 	}
 	
 	public Review getOneReview(String username, String dogName) {
@@ -37,7 +44,6 @@ public class ReviewCollection {
 	public boolean addReview (Review review) {
     	for (Review r : reviews) { 		       
             if(r.getUsername().equals(review.getUsername()) && r.getDogName().equals(review.getDogName())) return false;
-
        } 
         reviews.add(review); 
         return true;  

@@ -259,6 +259,10 @@ form.inline-form {
 .buttonTrash {
 	background-color: #0D3B66;
 	border: none;
+	font-size: 1.2rem;
+	color: #EE964B;
+	font-family: Freude;
+	font-weight: lighter; 
 }
 
 /*sign up, sign in, account page*/
