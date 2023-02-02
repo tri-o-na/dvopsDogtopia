@@ -28,7 +28,7 @@
 
 
 
-<!-- ABOUT THE DVOPS DOGTOPIA PROJECT -->
+<!-- ABOUT THE DEVOPS DOGTOPIA PROJECT -->
 
 For this project, my team and I are  tasked to create a application utilizing standard continuous integration and delivery techniques,
 such as Version Control using Source Code Management tools. 
