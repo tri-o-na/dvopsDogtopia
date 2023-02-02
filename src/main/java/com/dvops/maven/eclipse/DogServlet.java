@@ -73,9 +73,8 @@ public class DogServlet extends HttpServlet {
 			System.out.println(r.getUsername());
 			System.out.println(r.getReview());
 			System.out.println(r.getRating());
-			System.out.println("reeeview	");
+			System.out.println("	");
 		}
-		System.out.println("hello");
 		System.out.println(reviewCollection.getOneDogReview(request.getParameter("name")));
 		request.setAttribute("listReviews", reviews);
 		request.getRequestDispatcher("/dogDesc.jsp").forward(request, response);
@@ -178,44 +177,49 @@ public class DogServlet extends HttpServlet {
 	}
 
 	private void editReview(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		/*
-		 * System.out.println("Update/Delete form called");
-		 * 
-		 * //Setting Strings usable on both functions String username = (String)
-		 * request.getSession().getAttribute("username"); String oldpass = (String)
-		 * request.getSession().getAttribute("password");
-		 * 
-		 * //Need to use this method as both functions are under the same form.
-		 * 
-		 * 
-		 * System.out.println("Update called");
-		 * 
-		 * //Checking whether email is valid if (request.getParameter("eemail") != "" &&
-		 * request.getParameter("eemail").contains("@") &&
-		 * request.getParameter("eemail") != null) {
-		 * 
-		 * //Checking whether password is valid if (request.getParameter("epassword") !=
-		 * "" && request.getParameter("epassword") != null) {
-		 * 
-		 * //Getting extra fields needed to edit user. String email =
-		 * request.getParameter("eemail"); String password =
-		 * request.getParameter("epassword");
-		 * 
-		 * //Call edit user function in UserCollection.java
-		 * reviewCollection.editReview(username, email, password, oldpass);
-		 * 
-		 * //Updating sessionStorage with new/old values
-		 * request.getSession().setAttribute("email", email);
-		 * request.getSession().setAttribute("password", password);
-		 * 
-		 * //Redirect the user to index.jsp
-		 * response.sendRedirect("http://localhost:8080/dvopsDogtopia/index.jsp"); }
-		 * else { //Alerting the user that their password cannot be empty PrintWriter
-		 * out = response.getWriter(); out.println("<script type=\"text/javascript\">");
-		 * out.println("alert('Password cannot be empty!');");
-		 * out.println("location='http://localhost:8080/dvopsDogtopia/account.jsp';");
-		 * out.println("</script>"); };
-		 */
+
+		System.out.println("Update review called");
+
+		String username = (String) request.getSession().getAttribute("username");
+		String dogName = request.getParameter("udogName");
+		System.out.println(username);
+		System.out.println(dogName);
+		System.out.println(' ');
+
+		// Need to use this method as both functions are under the same form.
+
+		System.out.println("Update called");
+
+		
+		if (request.getParameter("ureview") != "" && request.getParameter("ureview") != null) {
+
+			
+			if (request.getParameter("urating") != "" && request.getParameter("urating") != null) {
+
+				// Getting extra fields needed to edit user.
+				String review = request.getParameter("ureview");
+				int rating = Integer.parseInt(request.getParameter("urating"));
+
+				// Call edit user function in UserCollection.java
+				reviewCollection.editReview(username, dogName, review, rating);
+				System.out.println(review);
+				System.out.println(rating);
+
+				// Updating sessionStorage with new values
+				request.getSession().setAttribute("review", review);
+				request.getSession().setAttribute("rating", rating);
+
+				// Redirect the user to dogDesc.jsp
+				response.sendRedirect("http://localhost:8080/dvopsDogtopia/home.jsp");
+			} else {
+				// Alerting the user that their review and rating cannot be empty
+				PrintWriter out = response.getWriter();
+				out.println("<script type=\"text/javascript\">");
+				out.println("alert('review and rating cannot be empty!');");
+				out.println("location='http://localhost:8080/dvopsDogtopia/home.jsp';");
+				out.println("</script>");
+			}
+		}
 
 	}
 
@@ -223,7 +227,7 @@ public class DogServlet extends HttpServlet {
 			throws ServletException, IOException {
 		System.out.println("Delete review called");
 
-		// Setting Strings usable on both functions
+		// Setting Strings usable on both functions 
 		String username = (String) request.getSession().getAttribute("username");
 		String dogName = request.getParameter("ddogName");
 		System.out.println(username);

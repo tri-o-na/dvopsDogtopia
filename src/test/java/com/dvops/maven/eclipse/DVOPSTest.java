@@ -39,7 +39,7 @@ public class DVOPSTest {
 	    WebDriverWait wait = new WebDriverWait(webDriver, 50);
 	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("home-page-dog-img")));	    
 	    
-	    //Find clickable img. 
+	    //Find clickable img.  
 	    webDriver.findElement(By.id("GERMAN SHEPHERD")).click();
 	    
 	    //Confirm that it works by comparing the Title of the addReview.jsp.
@@ -193,12 +193,13 @@ public class DVOPSTest {
 	    //Confirm that it works by comparing the Text inside accountTitle.
 	    AssertJUnit.assertEquals(webDriver.switchTo().alert().getText(), "User does not exist, or inputted User/Password incorrect");
 	  } 
+  //addreview, edit review, list review, delete review, 1 checking scenario
   
   @BeforeTest
   public void beforeTest() {
 	  //Setting system properties of ChromeDriver.
 	  //to amend directory path base on your local file path.
-	  String chromeDriverDir = "C:\\Users\\Clare\\Desktop\\chromeDriver\\chromedriver.exe";
+	  String chromeDriverDir = "C:\\Program Files\\Google\\Chrome\\chromedriver.exe";
 
 	  System.setProperty("webdriver.chrome.driver", chromeDriverDir);
 	  //System.setProperty("webdriver.chrome.driver", System.getenv("chromedriver"));

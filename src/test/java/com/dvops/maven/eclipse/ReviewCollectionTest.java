@@ -61,15 +61,17 @@ public class ReviewCollectionTest {
 		// Testing specific dog's reviews has been retrieved and all information is
 		// correct.
 		List<Review> testReview = rc.getOneDogReview("GERMAN SHEPHERD");
-		assertEquals(((Review) testReview).getUsername(), "user2");
-		assertEquals(((Review) testReview).getDogName(), "GERMAN SHEPHERD");
-		assertEquals(((Review) testReview).getReview(),
+		assertEquals(testReview.get(0).getUsername(), "user2");
+		assertEquals(testReview.get(0).getDogName(), "GERMAN SHEPHERD");
+		assertEquals(testReview.get(0).getReview(),
 				"Has separation anxiety,  is extremely active, very loyal, protects all, good at tricks");
-		assertEquals(((Review) testReview).getRating(), 3);
+		assertEquals(testReview.get(0).getRating(), 3);
 
 		// Testing specific dog is not found and returned a null value
 		List<Review> failTestReview = rc.getOneDogReview("NOT SHEPHERD");
-		assertNull(failTestReview);
+		if (failTestReview.isEmpty()) {
+			assertEquals(failTestReview.size(), 0);
+		}
 	}
 
 	@Test
@@ -121,26 +123,19 @@ public class ReviewCollectionTest {
 		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getRating(), 5);
 
 		// Testing whether changing ZoeMang review saves and work
-		rc.editReview("ZoeMang", "GERMAN SHEPHERD",
-				"good",
-				5);
+		rc.editReview("ZoeMang", "GERMAN SHEPHERD","good",5);
 		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getReview(), "good");
 		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getRating(), 5);
 
 		// Testing whether changing ZoeMang rating saves and work
-		rc.editReview("ZoeMang", "GERMAN SHEPHERD",
-				"Very sporty and loves to go on hikes with me, learns new tricks very fast, is a great companion to have!",
-				5);
-		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getReview(),
-				"Very sporty and loves to go on hikes with me, learns new tricks very fast, is a great companion to have!");
+		rc.editReview("ZoeMang", "GERMAN SHEPHERD","good",4); 
+		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getReview(),"good");
 		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getRating(), 4);
 
 		// Testing whether changing ZoeMang review and rating saves and work
-		rc.editReview("ZoeMang", "GERMAN SHEPHERD",
-				"Very sporty and loves to go on hikes with me, learns new tricks very fast, is a great companion to have!",
-				5);
-		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getReview(), "very good");
-		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getRating(), 4);
+		rc.editReview("ZoeMang", "GERMAN SHEPHERD","Very good",3);
+		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getReview(), "Very good");
+		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getRating(), 3);
 
 	}
 

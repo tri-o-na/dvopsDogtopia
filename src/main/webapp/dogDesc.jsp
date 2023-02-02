@@ -19,7 +19,7 @@
 <body>
 	<nav class="navbar">
 		<div>
-			<a href="<%=request.getContextPath()%>/ReviewServlet/deleteReview?ddogName=${param['name']}"><img
+			<a href="<%=request.getContextPath()%>/ReviewServlet/editReview?udogName=${param['name']}"><img
 				class="logo" src="<%=request.getContextPath()%>/DVOPS-DOGTOPIA.jpg"
 				width="18%"> </a>
 			<div class="tabs">
@@ -29,7 +29,7 @@
 					href="<%=request.getContextPath()%>/about-us.jsp"> ABOUT US</a>
 				<c:if test='${sessionScope.username == null}'>
 					<a class="top_title"
-						href="<%=request.getContextPath()%>/signUp.jsp"> Sign Up</a>
+						href="<%=request.getContextPath()%>/signUp.jsp">Sign Up</a>
 				</c:if>
 				<c:if test='${sessionScope.username != null}'>
 					<a class="top_title"
@@ -163,7 +163,7 @@
 						</c:if>
 						<c:if test='${review.username == sessionScope.username}'>
 							<a class="fa fa-pencil"
-								href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
+								href="<%=request.getContextPath()%>/editReview.jsp?udogName=<c:out value='${dog.dogName}'/>"></a>
 							<form class = "inline-form" method="post"
 								action="<%=request.getContextPath()%>/ReviewServlet/deleteReview?ddogName=${param['name']}">
 									<!-- <i class="fa fa-trash"></i> -->

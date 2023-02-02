@@ -3,19 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.dvops.maven.eclipse.ReviewCollectionTest">
+      <class name="com.dvops.maven.eclipse.DVOPSTest">
         <methods>
-          <include name="testGetAllReview"/>
-          <include name="checkLogin"/>
-          <include name="checkLogOut"/>
           <include name="beforeTest"/>
           <include name="afterTest"/>
-          <include name="checkDeleteUser"/>
-          <include name="checkUpdateUser"/>
-          <include name="checkDogDesc"/>
           <include name="checkSignUp"/>
         </methods>
-      </class> <!-- com.dvops.maven.eclipse.ReviewCollectionTest -->
+      </class> <!-- com.dvops.maven.eclipse.DVOPSTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
