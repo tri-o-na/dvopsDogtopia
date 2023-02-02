@@ -35,7 +35,7 @@
 				<input type="password" class="inputBox" name="rpassword">
 
 			</div>
-			<a href="login.jsp" class="linkToSignIn">Have An Account? Sign In Here</a> 
+			<a id="loginJspLink" href="login.jsp" class="linkToSignIn">Have An Account? Sign In Here</a> 
 			<input class="formButton" type="submit" value="Sign Up" />
 		</form>
 	</div>

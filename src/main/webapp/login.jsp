@@ -33,7 +33,7 @@
 				<input type="password" class="inputBox" name="lpassword">
 
 			</div>
-			<a href="signUp.jsp" class="linkToSignUp">No Account? Sign Up
+			<a id="signUpJspLink" href="signUp.jsp" class="linkToSignUp">No Account? Sign Up
 				Here</a>
 			<input class="formButton" type="submit" value="Sign In" />
 		</form>

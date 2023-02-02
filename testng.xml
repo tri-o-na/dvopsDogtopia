@@ -6,6 +6,7 @@
       <class name="com.dvops.maven.eclipse.DVOPSTest"/>
       <class name="com.dvops.maven.eclipse.DogCollectionTest"/>
       <class name="com.dvops.maven.eclipse.UserCollectionTest"/>
+      <class name="com.dvops.maven.eclipse.ReviewCollectionTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

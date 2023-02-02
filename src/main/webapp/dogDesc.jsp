@@ -162,7 +162,7 @@
 							<i class="fa fa-star"></i>
 						</c:if>
 						<c:if test='${review.username == sessionScope.username}'>
-							<a class="fa fa-pencil"
+							<a class="fa fa-pencil" id="editButton"
 								href="<%=request.getContextPath()%>/editReview.jsp?udogName=<c:out value='${dog.dogName}'/>"></a>
 							<form class = "inline-form" method="post"
 								action="<%=request.getContextPath()%>/ReviewServlet/deleteReview?ddogName=${param['name']}">

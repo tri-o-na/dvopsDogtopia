@@ -4,9 +4,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+
 
 public class ReviewCollectionTest {
 	private ReviewCollection rc = new ReviewCollection();
@@ -17,6 +21,7 @@ public class ReviewCollectionTest {
 	private Review testReview5;
 	private final int REVIEW_COLLECTION_SIZE = 3;
 
+	@BeforeMethod
 	@BeforeEach
 	void setUp() throws Exception {
 		rc = new ReviewCollection();
@@ -40,6 +45,7 @@ public class ReviewCollectionTest {
 
 	}
 
+	@AfterMethod
 	@AfterEach
 	void tearDown() throws Exception {
 	}

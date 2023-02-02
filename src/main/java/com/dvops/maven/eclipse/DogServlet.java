@@ -74,7 +74,7 @@ public class DogServlet extends HttpServlet {
 			System.out.println(r.getReview());
 			System.out.println(r.getRating());
 			System.out.println("	");
-		}
+		} 
 		System.out.println(reviewCollection.getOneDogReview(request.getParameter("name")));
 		request.setAttribute("listReviews", reviews);
 		request.getRequestDispatcher("/dogDesc.jsp").forward(request, response);
@@ -210,14 +210,18 @@ public class DogServlet extends HttpServlet {
 				request.getSession().setAttribute("rating", rating);
 
 				// Redirect the user to dogDesc.jsp
-				response.sendRedirect("http://localhost:8080/dvopsDogtopia/home.jsp");
+				PrintWriter out = response.getWriter();
+				out.println("<script type=\"text/javascript\">");
+				out.println("alert('review edited');");
+				out.println("location='http://localhost:8080/dvopsDogtopia/DogServlet/home';");
+				out.println("</script>"); 
 			} else {
 				// Alerting the user that their review and rating cannot be empty
 				PrintWriter out = response.getWriter();
 				out.println("<script type=\"text/javascript\">");
 				out.println("alert('review and rating cannot be empty!');");
-				out.println("location='http://localhost:8080/dvopsDogtopia/home.jsp';");
-				out.println("</script>");
+				out.println("location='http://localhost:8080/dvopsDogtopia/DogServlet/home';");
+				out.println("</script>"); 
 			}
 		}
 
