@@ -42,7 +42,7 @@ This web application is done in Eclipse IDE using jsp and css.
 <!-- CONTACT -->
 ## Contact
 
-Individual involved - triona.lee13@gmail.com, clarenceongjy4@gmail.com
+Individuals involved - triona.lee13@gmail.com, clarenceongjy4@gmail.com
 
 Project Link: [https://github.com/SlesviaLu/dvopsDogtopia](https://github.com/SlesviaLu/dvopsDogtopia)
 
