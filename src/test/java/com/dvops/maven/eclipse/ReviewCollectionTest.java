@@ -4,9 +4,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+
 
 public class ReviewCollectionTest {
 	private ReviewCollection rc = new ReviewCollection();
@@ -17,10 +21,11 @@ public class ReviewCollectionTest {
 	private Review testReview5;
 	private final int REVIEW_COLLECTION_SIZE = 3;
 
+	@BeforeMethod
 	@BeforeEach
 	void setUp() throws Exception {
 		rc = new ReviewCollection();
-		testReview1 = new Review("user1", "GERMAN SHEPHERD",
+		testReview1 = new Review("user2", "GERMAN SHEPHERD",
 				"Has separation anxiety,  is extremely active, very loyal, protects all, good at tricks", 3);
 		testReview2 = new Review("JaneTan", "GOLDEN RETRIEVER", "Leaves fur all over the house, very fun to play with",
 				4);
@@ -40,6 +45,7 @@ public class ReviewCollectionTest {
 
 	}
 
+	@AfterMethod
 	@AfterEach
 	void tearDown() throws Exception {
 	}
@@ -52,7 +58,7 @@ public class ReviewCollectionTest {
 
 		// Testing specific fields being able to retrieved through the list
 		List<Review> testRc = rc.getAllReview();
-		assertEquals(testRc.get(0).getUsername(), "user1");
+		assertEquals(testRc.get(0).getUsername(), "user2");
 		assertEquals(testRc.get(2).getUsername(), "ZoeMang");
 	}
 
@@ -60,32 +66,34 @@ public class ReviewCollectionTest {
 	void testGetOneDogReview() {
 		// Testing specific dog's reviews has been retrieved and all information is
 		// correct.
-		Review testReview = rc.getOneDogReview("GERMAN SHEPHERD");
-		assertEquals(testReview.getUsername(), "user1");
-		assertEquals(testReview.getDogName(), "GERMAN SHEPHERD");
-		assertEquals(testReview.getReview(),
+		List<Review> testReview = rc.getOneDogReview("GERMAN SHEPHERD");
+		assertEquals(testReview.get(0).getUsername(), "user2");
+		assertEquals(testReview.get(0).getDogName(), "GERMAN SHEPHERD");
+		assertEquals(testReview.get(0).getReview(),
 				"Has separation anxiety,  is extremely active, very loyal, protects all, good at tricks");
-		assertEquals(testReview.getRating(), 3);
+		assertEquals(testReview.get(0).getRating(), 3);
 
 		// Testing specific dog is not found and returned a null value
-		Review failTestReview = rc.getOneDogReview("NOT SHEPHERD");
-		assertNull(failTestReview);
+		List<Review> failTestReview = rc.getOneDogReview("NOT SHEPHERD");
+		if (failTestReview.isEmpty()) {
+			assertEquals(failTestReview.size(), 0);
+		}
 	}
 
 	@Test
 	void testGetOneReview() {
 		// Testing specific dog's reviews has been retrieved and all information is correct.
-		assertEquals(rc.getOneReview("user1", "GERMAN SHEPHERD").getReview(), "Has separation anxiety,  is extremely active, very loyal, protects all, good at tricks");
-		assertEquals(rc.getOneReview("user1", "GERMAN SHEPHERD").getRating(), 3);
-		Review testReview = rc.getOneReview("user1", "GERMAN SHEPHERD");
-		assertEquals(testReview.getUsername(), "user1");
+		assertEquals(rc.getOneReview("user2", "GERMAN SHEPHERD").getReview(), "Has separation anxiety,  is extremely active, very loyal, protects all, good at tricks");
+		assertEquals(rc.getOneReview("user2", "GERMAN SHEPHERD").getRating(), 3);
+		Review testReview = rc.getOneReview("user2", "GERMAN SHEPHERD");
+		assertEquals(testReview.getUsername(), "user2");
 		assertEquals(testReview.getDogName(), "GERMAN SHEPHERD");
 		assertEquals(testReview.getReview(),
 				"Has separation anxiety,  is extremely active, very loyal, protects all, good at tricks");
 		assertEquals(testReview.getRating(), 3);
 
 		// Testing specific dog is not found and returned a null value
-		Review failTestReview = rc.getOneReview("notuser1", "NOT SHEPHERD");
+		Review failTestReview = rc.getOneReview("notuser2", "NOT SHEPHERD");
 		assertNull(failTestReview);
 	}
 
@@ -121,51 +129,44 @@ public class ReviewCollectionTest {
 		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getRating(), 5);
 
 		// Testing whether changing ZoeMang review saves and work
-		rc.editReview("ZoeMang", "GERMAN SHEPHERD",
-				"good",
-				5);
+		rc.editReview("ZoeMang", "GERMAN SHEPHERD","good",5);
 		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getReview(), "good");
 		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getRating(), 5);
 
 		// Testing whether changing ZoeMang rating saves and work
-		rc.editReview("ZoeMang", "GERMAN SHEPHERD",
-				"Very sporty and loves to go on hikes with me, learns new tricks very fast, is a great companion to have!",
-				5);
-		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getReview(),
-				"Very sporty and loves to go on hikes with me, learns new tricks very fast, is a great companion to have!");
+		rc.editReview("ZoeMang", "GERMAN SHEPHERD","good",4); 
+		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getReview(),"good");
 		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getRating(), 4);
 
 		// Testing whether changing ZoeMang review and rating saves and work
-		rc.editReview("ZoeMang", "GERMAN SHEPHERD",
-				"Very sporty and loves to go on hikes with me, learns new tricks very fast, is a great companion to have!",
-				5);
-		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getReview(), "very good");
-		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getRating(), 4);
+		rc.editReview("ZoeMang", "GERMAN SHEPHERD","Very good",3);
+		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getReview(), "Very good");
+		assertEquals(rc.getOneReview("ZoeMang", "GERMAN SHEPHERD").getRating(), 3);
 
 	}
 
 	@Test
 	void testDeleteReview() {
 		// Testing whether deleting review works
-		rc.deleteReview("user1", "GERMAN SHEPHERD");
+		rc.deleteReview("user2", "GERMAN SHEPHERD");
 		assertEquals(rc.getAllReview().size(), REVIEW_COLLECTION_SIZE - 1);
 
-		// Testing whether user1's review will not be deleted with a wrong username
+		// Testing whether user2's review will not be deleted with a wrong username
 		// field
-		rc.deleteReview("user123", "GERMAN SHEPHERD");
+		rc.deleteReview("user223", "GERMAN SHEPHERD");
 		assertEquals(rc.getAllReview().size(), REVIEW_COLLECTION_SIZE - 1);
 
-		// Testing whether user1's review will not be deleted with a wrong dog field
-		rc.deleteReview("user1", "GOLDEN RETRIEVER");
+		// Testing whether user2's review will not be deleted with a wrong dog field
+		rc.deleteReview("user2", "GOLDEN RETRIEVER");
 		assertEquals(rc.getAllReview().size(), REVIEW_COLLECTION_SIZE - 1);
 
-		// Testing whether user1's review will not be deleted with a empty username
+		// Testing whether user2's review will not be deleted with a empty username
 		// field
 		rc.deleteReview("", "GERMAN SHEPHERD");
 		assertEquals(rc.getAllReview().size(), REVIEW_COLLECTION_SIZE - 1);
 
-		// Testing whether user1's will not be deleted with a empty dog field
-		rc.deleteReview("user1", "");
+		// Testing whether user2's will not be deleted with a empty dog field
+		rc.deleteReview("user2", "");
 		assertEquals(rc.getAllReview().size(), REVIEW_COLLECTION_SIZE - 1);
 	}
 

@@ -24,11 +24,11 @@
 				<a class="top_title" href="<%=request.getContextPath()%>/index.jsp"> HOME</a> 
 				<a class="top_title" href="<%=request.getContextPath()%>/about-us.jsp"> ABOUT US</a> 
 				<c:if test='${sessionScope.username == null}'>
-					<a class="top_title" href="<%=request.getContextPath()%>/signUp.jsp"> Sign Up</a>
+					<a class="top_title" href="<%=request.getContextPath()%>/signUp.jsp">Sign Up</a>
 				</c:if>
 				<c:if test='${sessionScope.username != null}'>
 					<a class="top_title" href="<%=request.getContextPath()%>/account.jsp"> ACCOUNT</a>
-					<form action="<%=request.getContextPath()%>/UserServlet/logout" method="post">
+					<form class="inline-form" action="<%=request.getContextPath()%>/UserServlet/logout" method="post">
 						<input class="top_title_logout" type="submit" value="LOG OUT"/>
 					</form>
 				</c:if>
@@ -37,19 +37,17 @@
 	</nav>
 	<div class="reviewformPositioning">
 		<div class="addReviewTitle">Edit your review here.</div>
-	 	<div class="addReviewForm">
-		 	<form>
-				<div class="inputTitle1">
-					Review
-				</div>
-				<input type="text" class="inputBox">	
-				<div class="inputTitle">
-					Rating 
-				</div>
-				<input type="number" class="inputBox">		 	
-		 	</form>
-		</div>
-		<button class="formButton">Save</button>
+		<form action="<%=request.getContextPath()%>/ReviewServlet/editReview?udogName=${param['udogName']}"
+			method="post">
+			<div class="addReviewForm">
+
+				<div class="inputTitle1">Review</div>
+				<input type="text" class="inputBox" name="ureview">
+				<div class="inputTitle">Rating</div>
+				<input type="number" class="inputBox" name="urating">
+			</div>
+			<input type="submit" class="formButton" value="Edit Review">
+		</form>
 	</div>
 </body>
 </html>

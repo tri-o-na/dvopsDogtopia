@@ -19,7 +19,7 @@
 <body>
 	<nav class="navbar">
 		<div>
-			<a href="<%=request.getContextPath()%>/index.jsp"><img
+			<a href="<%=request.getContextPath()%>/ReviewServlet/editReview?udogName=${param['name']}"><img
 				class="logo" src="<%=request.getContextPath()%>/DVOPS-DOGTOPIA.jpg"
 				width="18%"> </a>
 			<div class="tabs">
@@ -29,12 +29,13 @@
 					href="<%=request.getContextPath()%>/about-us.jsp"> ABOUT US</a>
 				<c:if test='${sessionScope.username == null}'>
 					<a class="top_title"
-						href="<%=request.getContextPath()%>/signUp.jsp"> Sign Up</a>
+						href="<%=request.getContextPath()%>/signUp.jsp">Sign Up</a>
 				</c:if>
 				<c:if test='${sessionScope.username != null}'>
 					<a class="top_title"
 						href="<%=request.getContextPath()%>/account.jsp"> ACCOUNT</a>
-					<form action="<%=request.getContextPath()%>/UserServlet/logout"
+					<form class="inline-form"
+						action="<%=request.getContextPath()%>/UserServlet/logout"
 						method="post">
 						<input class="top_title_logout" type="submit" value="LOG OUT" />
 					</form>
@@ -110,10 +111,11 @@
 	<br>
 	<br>
 	<br>
-	<br>
+	<br>s
+	<%-- <c:if test="${not empty session.username}"> --%>
 	<h4 class="review-title">REVIEWS</h4>
 	<a id="addReview" class="add-a-review-btn"
-		href="<%=request.getContextPath()%>/ReviewServlet/addReview?name=<c:out value='${review.dogName}'/>">ADD
+		href="<%=request.getContextPath()%>/addReview.jsp?rDogName=<c:out value='${dog.dogName}'/>">ADD
 		A REVIEW</a>
 	<c:forEach var="review" items="${listReviews}">
 		<div class="row reviews">
@@ -130,11 +132,6 @@
 							<i class="fa fa-star none"></i>
 							<i class="fa fa-star none"></i>
 							<i class="fa fa-star none"></i>
-							<a class="fa fa-pencil"
-								href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
-							<button name="deleteReview" class="buttonTrash">
-								<i class="fa fa-trash"></i>
-							</button>
 						</c:if>
 						<c:if test='${review.rating == 2}'>
 							<i class="fa fa-star"></i>
@@ -142,11 +139,6 @@
 							<i class="fa fa-star none"></i>
 							<i class="fa fa-star none"></i>
 							<i class="fa fa-star none"></i>
-							<a class="fa fa-pencil"
-								href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
-							<button name="deleteReview" class="buttonTrash">
-								<i class="fa fa-trash"></i>
-							</button>
 						</c:if>
 						<c:if test='${review.rating == 3}'>
 							<i class="fa fa-star"></i>
@@ -154,11 +146,6 @@
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star none"></i>
 							<i class="fa fa-star none"></i>
-							<a class="fa fa-pencil"
-								href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
-							<button name="deleteReview" class="buttonTrash">
-								<i class="fa fa-trash"></i>
-							</button>
 						</c:if>
 						<c:if test='${review.rating == 4}'>
 							<i class="fa fa-star"></i>
@@ -166,11 +153,6 @@
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star none"></i>
-							<a class="fa fa-pencil"
-								href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
-							<button name="deleteReview" class="buttonTrash">
-								<i class="fa fa-trash"></i>
-							</button>
 						</c:if>
 						<c:if test='${review.rating == 5}'>
 							<i class="fa fa-star"></i>
@@ -178,11 +160,15 @@
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
-							<a class="fa fa-pencil"
-								href="<%=request.getContextPath()%>/ReviewServlet/editReview?name=<c:out value='${dog.dogName}'/>"></a>
-							<button name="deleteReview" class="buttonTrash">
-								<i class="fa fa-trash"></i>
-							</button>
+						</c:if>
+						<c:if test='${review.username == sessionScope.username}'>
+							<a class="fa fa-pencil" id="editButton"
+								href="<%=request.getContextPath()%>/editReview.jsp?udogName=<c:out value='${dog.dogName}'/>"></a>
+							<form class = "inline-form" method="post"
+								action="<%=request.getContextPath()%>/ReviewServlet/deleteReview?ddogName=${param['name']}">
+									<!-- <i class="fa fa-trash"></i> -->
+									<input type="submit" name="deleteReview" class="buttonTrash" value = "DELETE">
+							</form>
 						</c:if>
 					</div>
 					<p class="review-text">
@@ -193,6 +179,7 @@
 			</div>
 		</div>
 	</c:forEach>
+	<%-- </c:if> --%>
 
 	<!-- <div class="row reviews">
 		<div class="columnReviews1">

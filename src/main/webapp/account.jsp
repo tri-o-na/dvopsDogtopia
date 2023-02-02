@@ -20,7 +20,7 @@
 				<a class="top_title" href="index.jsp"> HOME</a> <a class="top_title"
 					href="about-us.jsp"> ABOUT US</a> 
 					<a class="top_title_main" href="account.jsp"> ACCOUNT</a>
-					<form action="<%=request.getContextPath()%>/UserServlet/logout" method="post">
+					<form class="inline-form" action="<%=request.getContextPath()%>/UserServlet/logout" method="post">
 						<input class="top_title_logout" type="submit" value="LOG OUT"/>
 					</form>
 			</div>
@@ -36,7 +36,7 @@
 				<div class="inputTitle">Email</div>
 				<input type="email" class="inputBox" name="eemail" value = "${sessionScope.email}">
 				<div class="inputTitle">Password</div>
-				<input type="text" class="inputBox" name="epassword" value = "${sessionScope.password}">
+				<input type="password" class="inputBox" name="epassword" value = "${sessionScope.password}">
 
 			</div>
 			<div style="margin-top: 3vh;">

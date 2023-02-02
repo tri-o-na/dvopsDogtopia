@@ -60,7 +60,7 @@ class DogCollectionTest {
 		AssertJUnit.assertEquals(testDog.getRating(), 4);
 		AssertJUnit.assertEquals(testDog.getImageFile(), "german-shepherd.jpg");
 		
-		//Testing specific dog is not found and returned a null value
+		//Testing specific dog is not found and returned a null value 
 		Dog failTestDog = dc.getOneDog("NOT SHEPHERD");
 		AssertJUnit.assertNull(failTestDog);
 	}

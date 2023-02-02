@@ -34,17 +34,9 @@
 	<servlet-mapping>
 		<servlet-name>DogServlet</servlet-name>
 		<url-pattern>/DogServlet/desc</url-pattern>
-		<url-pattern>/DogServlet/home</url-pattern>		
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>ReviewServlet</servlet-name>
-		<servlet-class>com.dvops.maven.eclipse.ReviewServlet</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>ReviewServlet</servlet-name>
-		<url-pattern>/ReviewServlet/addReview</url-pattern>
-		<url-pattern>/ReviewServlet/editReview</url-pattern>		
+		<url-pattern>/DogServlet/home</url-pattern>	
+		<url-pattern>/ReviewServlet/addReview</url-pattern>	
+		<url-pattern>/ReviewServlet/editReview</url-pattern>
+		<url-pattern>/ReviewServlet/deleteReview</url-pattern>
 	</servlet-mapping>
 </web-app>
